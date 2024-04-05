@@ -14,8 +14,10 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.OneToMany
 import javax.persistence.OneToOne
+import javax.persistence.Table
 
 @Entity
+@Table(name = "company")
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType::class)
 class Company(
     @Id @GeneratedValue(strategy = GenerationType.AUTO)

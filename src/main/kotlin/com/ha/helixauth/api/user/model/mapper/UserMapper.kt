@@ -8,6 +8,7 @@ object UserMapper {
     fun toDTO(user: User): UserDto = UserDto(
         id = user.id,
         username = user.username,
+        email = user.email,
         password = user.password,
         firstName = user.firstName,
         lastName = user.lastName,
@@ -17,6 +18,7 @@ object UserMapper {
 
     fun toEntity(userDto: UserDto, company: Company): User = User(
         username = userDto.username,
+        email = userDto.email,
         password = userDto.password,
         firstName = userDto.firstName,
         lastName = userDto.lastName,

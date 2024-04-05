@@ -35,6 +35,7 @@ class UserService(
         user.apply {
             username = userDTO.username
             password = hashedPassword // Ensure password is encrypted
+            email = email
             firstName = firstName
             lastName = lastName
             avatar = avatar
