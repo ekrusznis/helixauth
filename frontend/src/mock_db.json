@@ -1,0 +1,48 @@
+{
+  "dashboardCards": [
+    {
+      "id": "totalTransactions",
+      "title": "Total Transactions",
+      "value": 560
+    },
+    {
+      "id": "totalHits",
+      "title": "Total Hits",
+      "value": 1120
+    },
+    {
+      "id": "secureEndpoints",
+      "title": "Secure Endpoints",
+      "value": 47
+    }
+  ],
+  "reportData": [
+    {
+      "id": 1,
+      "path": "/api/data",
+      "type": "GET",
+      "roles": ["Admin", "Editor"],
+      "transactions": 120,
+      "hits": 240,
+      "labels": ["security", "data"]
+    },
+    {
+      "id": 2,
+      "path": "/api/user",
+      "type": "POST",
+      "roles": ["Admin"],
+      "transactions": 80,
+      "hits": 160,
+      "labels": ["user", "create"]
+    },
+    {
+      "id": 3,
+      "path": "/api/settings",
+      "type": "PUT",
+      "roles": ["Editor"],
+      "transactions": 90,
+      "hits": 180,
+      "labels": ["settings", "update"]
+    }
+  ]
+}

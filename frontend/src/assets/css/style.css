@@ -43501,95 +43501,93 @@ select {
   }
 
   /* ============== 25 DASHBOARD PAGE ============== */
-/* Navbar styles */
-.navbar {
+  #wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  min-height: 100vh;
   background-color: #343a40;
-}
-
-/* Sidebar toggle button */
-.navbar button {
-  color: #ffffff;
-  background-color: #495057;
-  border: none;
-}
-
-/* Sidebar styles */
-.nav {
-  width: 200px;
-  flex-direction: column;
-}
-
-.nav-link {
-  color: #ffffff;
-  padding: 10px 15px;
-}
-
-.nav-link:hover {
-  background-color: #495057;
-}
-
-/* Card styles for the Doughnut graph container */
-.card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
   padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  width: 250px;
+  transition: all 0.3s ease;
 }
 
-/* Table styles */
-.table {
-  margin-top: 20px;
+.sidebar.collapsed {
+  width: 75px; /* Adjust based on your preference for collapsed width */
 }
 
-.table-responsive {
-  margin-top: 20px;
+.sidebar .btn-toggle {
+  margin-bottom: 20px;
+  background-color: #495057;
+  color: #fff;
 }
 
-/* Table rows and columns */
-.table th, .table td {
+.sidebar .nav-link {
+  color: #ffffff;
   padding: 10px;
-  text-align: left;
-  border-top: 1px solid #dee2e6;
 }
 
-/* Hover effect for table rows */
+.sidebar .nav-link:hover {
+  background-color: #495057;
+}
+
+.page-content-wrapper {
+  flex: 1;
+  padding: 20px;
+}
+/* Updated styles for the dashboard content area */
+.dashboard-content {
+  padding: 20px;
+}
+
+/* Specific styles for the cards */
+.card {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust card title and text styling */
+.card-title, .card-text {
+  margin: 0;
+}
+
+/* Ensure the report table fills its container */
+.report-table .table {
+  margin-top: 20px;
+}
+
+/* Ensure table headers and cells have consistent padding */
+.table th, .table td {
+  padding: 0.5rem;
+}
+
+/* Enhance visibility of table rows on hover */
 .table-hover tbody tr:hover {
   background-color: #f8f9fa;
 }
 
-/* Striped table rows */
+/* Make striped rows more distinct */
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0,0,0,.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Styles for the action dropdown in the table */
-.dropdown-menu {
-  background-color: #ffffff;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-}
-
+/* Ensure action dropdown has consistent styling */
 .dropdown-item {
-  padding: 5px 15px;
+  color: #343a40;
 }
 
 .dropdown-item:hover {
   background-color: #f8f9fa;
 }
 
-/* Styles for the doughnut graph canvas container */
-.chart-container {
-  position: relative;
-  height: 40vh;
-  width: 80vw;
-}
-  .chart-container {
-    height: 30vh;
-    width: 100vw;
+  .nav {
+    width: 100%;
   }
 
-  /* Adjust card layout for mobile */
   .card {
     margin-bottom: 20px;
   }
