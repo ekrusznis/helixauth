@@ -22,7 +22,8 @@ class UserController(
     ) {
 
     @PostMapping("/login")
-    fun login(@RequestBody loginRequest: LoginRequestDto): ResponseEntity<*> {
+    fun login(@RequestBody loginRequest: LoginRequestDto): ResponseEntity<UserDto> {
+        println("login REQUEST:: ${loginRequest.email}, ${loginRequest.password}")
         val user = userService.authenticateUser(loginRequest.email, loginRequest.password)
         return ResponseEntity.ok(user)
     }

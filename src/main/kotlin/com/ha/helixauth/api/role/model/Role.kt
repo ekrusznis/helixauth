@@ -1,6 +1,7 @@
 package com.ha.helixauth.api.role.model
 
 import com.ha.helixauth.api.company.model.Company
+import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -16,5 +17,5 @@ class Role(
     var name: String,
     @ManyToOne
     var company: Company,
-    var smartContract: String = "" // Placeholder for smart contract data
+    @Column(name = "smart_contract") var smartContract: String = ""
 )

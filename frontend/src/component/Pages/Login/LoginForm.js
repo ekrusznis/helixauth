@@ -45,7 +45,7 @@ const LoginForm = () => {
                     <form onSubmit={handleLogin}>
                         <div className="login-form">
                             <label className="login-label">Email address</label>
-                            <input className="from-control" type="email" id="form-email" name="email" placeholder="Enter Your Email" required autoComplete="off" value={email} onChange={e => setEmail(e.target.value)} />
+                            <input className="from-control" type="email" id="form-email" name="email" placeholder="Enter Your Email" required value={email} onChange={e => setEmail(e.target.value)} />
                             <label className="login-label">Password</label>
                             <input className="from-control" type="password" id="password" name="password" placeholder="Enter Your Password" autoComplete="off" required value={password} onChange={e => setPassword(e.target.value)} />
                         </div>

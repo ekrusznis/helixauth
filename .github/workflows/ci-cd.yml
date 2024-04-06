@@ -1,0 +1,33 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ master, dev ]  # Trigger on pushes to master and dev branches
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # The type of runner that the job will run on
+
+    steps:
+      - uses: actions/checkout@v2  # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it
+
+      - name: Set up JDK 11  # For Java/Kotlin projects, adjust according to your stack
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Build with Gradle  # For Java/Kotlin projects, adjust according to your stack
+        run: ./gradlew build
+
+    # Uncomment the following lines when you're ready to deploy
+    # - name: Deploy to Production
+    #   if: github.ref == 'refs/heads/master'
+    #   run: echo "Deploying to production server"
+    #   # Add deployment commands here
+    #
+    # - name: Deploy to Development Environment
+    #   if: github.ref == 'refs/heads/dev'
+    #   run: echo "Deploying to development environment"
+    #   # Add deployment commands here
+

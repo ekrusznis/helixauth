@@ -37,8 +37,9 @@ TABLE OF CONTENTS:
 22 team Page
 23 Login-SignUp Page
 ====== responsive style sheet ======
-24 responsive style  */
-
+24 responsive style
+25 Dashboard page
+*/
 
 /* ============== 01 global Style ============== */
 
@@ -43497,6 +43498,100 @@ select {
 
   .sc-login-box {
     max-width: 345px;
+  }
+
+  /* ============== 25 DASHBOARD PAGE ============== */
+/* Navbar styles */
+.navbar {
+  background-color: #343a40;
+}
+
+/* Sidebar toggle button */
+.navbar button {
+  color: #ffffff;
+  background-color: #495057;
+  border: none;
+}
+
+/* Sidebar styles */
+.nav {
+  width: 200px;
+  flex-direction: column;
+}
+
+.nav-link {
+  color: #ffffff;
+  padding: 10px 15px;
+}
+
+.nav-link:hover {
+  background-color: #495057;
+}
+
+/* Card styles for the Doughnut graph container */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+/* Table styles */
+.table {
+  margin-top: 20px;
+}
+
+.table-responsive {
+  margin-top: 20px;
+}
+
+/* Table rows and columns */
+.table th, .table td {
+  padding: 10px;
+  text-align: left;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Hover effect for table rows */
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Striped table rows */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+/* Styles for the action dropdown in the table */
+.dropdown-menu {
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.dropdown-item {
+  padding: 5px 15px;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Styles for the doughnut graph canvas container */
+.chart-container {
+  position: relative;
+  height: 40vh;
+  width: 80vw;
+}
+  .chart-container {
+    height: 30vh;
+    width: 100vw;
+  }
+
+  /* Adjust card layout for mobile */
+  .card {
+    margin-bottom: 20px;
   }
 }
 

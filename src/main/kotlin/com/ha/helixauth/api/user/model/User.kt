@@ -1,6 +1,7 @@
 package com.ha.helixauth.api.user.model
 
 import com.ha.helixauth.api.company.model.Company
+import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -16,8 +17,8 @@ class User(
     var username: String,
     var email: String,
     var password: String, // Ensure to use password encryption in production
-    var firstName: String,
-    var lastName: String,
+    @Column(name = "first_name") var firstName: String,
+    @Column(name = "last_name") var lastName: String,
     var avatar: String, // URL to the avatar image
     @ManyToOne
     var company: Company

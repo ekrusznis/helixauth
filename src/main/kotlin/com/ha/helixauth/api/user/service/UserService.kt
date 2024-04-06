@@ -53,7 +53,11 @@ class UserService(
     }
 
     fun authenticateUser(email: String, password: String): UserDto {
-        val user = userRepository.findByEmailAndPassword(email, password) ?: throw Exception("Invalid credentials")
+        println("authenticateUser REQUEST:: ${email}, $password")
+
+        val user = userRepository.findByEmailAndPassword(email, password)
+        println("authenticateUser RESPONSE:: ${email}, $password")
+
         return UserMapper.toDTO(user)
     }
 }
