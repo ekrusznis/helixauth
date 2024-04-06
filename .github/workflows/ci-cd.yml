@@ -17,6 +17,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
+      - name: Grant permission for gradlew
+        run: chmod +x ./gradlew  # This command changes the permissions
+
       - name: Build with Gradle  # For Java/Kotlin projects, adjust according to your stack
         run: ./gradlew build
 
