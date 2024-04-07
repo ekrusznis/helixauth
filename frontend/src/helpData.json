@@ -1,0 +1,104 @@
+[
+  {
+    "title": "Getting Started",
+    "articles": [
+      {
+        "id": 1,
+        "title": "Creating Your Account",
+        "description": "Learn how to create your account quickly and start using HelixAuth.",
+        "contentTypes": ["text"]
+      },
+      {
+        "id": 2,
+        "title": "What is a company referral",
+        "description": "Understand what a company referral is and how it can benefit you in HelixAuth.",
+        "contentTypes": ["text", "image"],
+        "images": ["https://example.com/image/path/company-referral.png"]
+      },
+      {
+        "id": 3,
+        "title": "Adding Your First User",
+        "description": "A step-by-step guide to adding your first user in the HelixAuth system.",
+        "contentTypes": ["text", "video"],
+        "videos": ["https://example.com/video/path/adding-first-user.mp4"]
+      }
+    ]
+  },
+  {
+    "title": "Configuration",
+    "articles": [
+      {
+        "id": 4,
+        "title": "Setting Up Roles and Permissions",
+        "description": "This article explains how to set up roles and permissions to manage access control.",
+        "contentTypes": ["text", "image"],
+        "images": ["https://example.com/image/path/roles-permissions.png"]
+      },
+      {
+        "id": 5,
+        "title": "Customizing Your Dashboard",
+        "description": "Learn how to customize your dashboard for a more personalized experience.",
+        "contentTypes": ["text"]
+      }
+    ]
+  },
+  {
+    "title": "Security",
+    "articles": [
+      {
+        "id": 6,
+        "title": "Securing Your Account",
+        "description": "Best practices for keeping your account secure.",
+        "contentTypes": ["text"]
+      },
+      {
+        "id": 7,
+        "title": "Understanding Blockchain Security",
+        "description": "An overview of how blockchain enhances the security of our system.",
+        "contentTypes": ["text", "image"],
+        "images": ["https://example.com/image/path/blockchain-security.png"]
+      }
+    ]
+  },
+  {
+    "title": "Advanced Features",
+    "articles": [
+      {
+        "id": 8,
+        "title": "Using Webhooks",
+        "description": "Integrate HelixAuth with your applications using webhooks.",
+        "contentTypes": ["text"]
+      },
+      {
+        "id": 9,
+        "title": "API Key Management",
+        "description": "How to manage your API keys securely.",
+        "contentTypes": ["text", "video"],
+        "videos": ["https://example.com/video/path/api-key-management.mp4"]
+      }
+    ]
+  },
+  {
+    "title": "Troubleshooting",
+    "articles": [
+      {
+        "id": 10,
+        "title": "Common Login Issues",
+        "description": "Troubleshoot common login issues and their fixes.",
+        "contentTypes": ["text"]
+      },
+      {
+        "id": 11,
+        "title": "Handling Data Sync Errors",
+        "description": "What to do when you encounter data synchronization errors.",
+        "contentTypes": ["text"]
+      },
+      {
+        "id": 12,
+        "title": "Reporting Bugs and Issues",
+        "description": "How to report any bugs or issues you encounter while using HelixAuth.",
+        "contentTypes": ["text"]
+      }
+    ]
+  }
+]

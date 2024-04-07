@@ -18,7 +18,9 @@ import TeamDetails from './component/Pages/TeamDetails/TeamDetails';
 import Faq from './component/Pages/Faq/Faq';
 import Login from './component/Pages/Login/Login';
 import Dashboard from './component/Pages/Dashboard/Dashboard';
+import Help from './component/Pages/Help/Help';
 import SignUp from './component/Pages/SignUp/SignUp';
+import Settings from './component/Pages/Settings/Settings';
 import Error404 from './component/Pages/Error404/Error404';
 import ScrollUpBtn from './component/Shared/ScrollUpBtn';
 
@@ -42,6 +44,8 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/dashboard' element={<Dashboard />}></Route>
+        <Route path='/help' element={<Help />}></Route>
+        <Route path='/settings' element={<Settings />}></Route>
         <Route path='*' element={<Error404 />}></Route>
       </Routes>
       <ScrollUpBtn />

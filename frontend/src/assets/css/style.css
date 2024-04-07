@@ -39,6 +39,7 @@ TABLE OF CONTENTS:
 ====== responsive style sheet ======
 24 responsive style
 25 Dashboard page
+26 Help page
 */
 
 /* ============== 01 global Style ============== */
@@ -43518,10 +43519,22 @@ select {
   width: 75px; /* Adjust based on your preference for collapsed width */
 }
 
-.sidebar .btn-toggle {
-  margin-bottom: 20px;
-  background-color: #495057;
-  color: #fff;
+.sidebar-toggle {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: -30px; /* Adjust placement based on your layout */
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #343a40; /* Match the sidebar color */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-collapsed .sidebar-toggle {
+  right: -10px; /* Adjust when sidebar is collapsed */
 }
 
 .sidebar .nav-link {
@@ -43591,6 +43604,33 @@ select {
   .card {
     margin-bottom: 20px;
   }
+
+  /* ============== 26 Help Page ============== */
+
+.help-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: calc(100vh - headerHeight - footerHeight); /* Adjust headerHeight and footerHeight with actual values */
+}
+
+/* Styles for the help articles to be scrollable */
+.help-articles {
+  flex: 1; /* Adjust width as needed */
+  margin: 0 20px;
+  overflow-y: auto; /* Makes the list scrollable */
+  border: 2px solid #007bff; /* Example blue border, change color as needed */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+}
+
+/* Styles for the help result with a different border color */
+.help-result {
+  flex: 2; /* Adjust width as needed */
+  margin: 0 20px;
+  overflow-y: auto; /* Makes the content scrollable */
+  border: 2px solid #28a745; /* Example green border, change color as needed */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+}
 }
 
 /* Max Resulation: 374px */
