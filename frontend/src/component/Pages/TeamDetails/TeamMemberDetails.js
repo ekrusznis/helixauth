@@ -33,7 +33,7 @@ const TeamMemberDetails = () => {
                                             <ul className="personal-info">
                                                 <li>
                                                     <i className="ri-mail-line"></i>
-                                                    <a href="mailto:hello@yourmail.com">info@gmail.com</a>
+                                                    <a href="mailto:support@helixauth.com">info@gmail.com</a>
                                                 </li>
                                                 <li>
                                                     <i className="ri-phone-fill"></i>

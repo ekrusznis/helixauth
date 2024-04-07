@@ -60,7 +60,7 @@ const Footer2 = (props) => {
                             <div className="footer-menu-area footer-menu-area-left sc-pl-65 sc-lg-pl-0 sc-md-pl-0">
                                 <h4 className="footer-title white-color sc-md-mb-15">Get In Touch</h4>
                                 <ul className="footer-menu-list">
-                                    <li><i className="ri-mail-fill"></i><a href="mailto:hello@yourmail.com">hello@yourmail.com</a></li>
+                                    <li><i className="ri-mail-fill"></i><a href="mailto:support@helixauth.com">support@helixauth.com</a></li>
                                     <li><i className="ri-phone-fill"></i><a href="tel:(000)123456789">(000) 123 456 789</a></li>
                                     <li className="footer-map"><i className="ri-map-pin-fill"></i><span>255 Sheet, City Name Home Land, NY</span></li>
                                 </ul>
@@ -74,7 +74,7 @@ const Footer2 = (props) => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="copyright-text text-center">
-                                    <p>&copy; {new Date().getFullYear()} <Link to="#"> Spria, </Link> All Rights Reserved</p>
+                                    <p>&copy; {new Date().getFullYear()} <Link to="#"> HelixAuth, </Link> All Rights Reserved</p>
                                 </div>
                             </div>
                         </div>

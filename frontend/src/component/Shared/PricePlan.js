@@ -31,8 +31,8 @@ const PricePlan = () => {
                                         <div className="perfect-title">Perfect for Small Businesses</div>
                                         <div className="price-list">
                                             <ul className="list">
-                                                <li><i className="ri-checkbox-circle-fill"></i><span>5 Per-Month Transactions</span></li>
-                                                <li><i className="ri-checkbox-circle-fill check"></i>10 User Maximum</li>
+                                                <li><i className="ri-checkbox-circle-fill"></i><span>1,000 Per-Month Transactions</span></li>
+                                                <li><i className="ri-checkbox-circle-fill check"></i>10 User Contracts</li>
                                                 <li><i className="ri-checkbox-circle-fill check"></i>Automated Role Generation</li>
                                                 <li><i className="ri-checkbox-circle-fill check"></i>Basic Usage Reporting</li>
                                             </ul>
@@ -53,8 +53,8 @@ const PricePlan = () => {
                                         <div className="perfect-title">Perfect for Medium Businesses</div>
                                         <div className="price-list">
                                             <ul className="list">
-                                                <li><i className="ri-checkbox-circle-fill"></i>20 Per-Month Transactions</li>
-                                                <li><i className="ri-checkbox-circle-fill"></i><span>25 Users Maximum</span></li>
+                                                <li><i className="ri-checkbox-circle-fill"></i>5,000 Per-Month Transactions</li>
+                                                <li><i className="ri-checkbox-circle-fill"></i><span>25 Users Contracts</span></li>
                                                 <li><i className="ri-checkbox-circle-fill"></i><span>Automated Rule Generation</span></li>
                                                 <li><i className="ri-checkbox-circle-fill check"></i>Custom Usage Reporting</li>
                                             </ul>
@@ -78,7 +78,7 @@ const PricePlan = () => {
                                         <div className="perfect-title">Perfect for Enterprise Businesses</div>
                                         <div className="price-list">
                                             <ul className="list">
-                                                <li><i className="ri-checkbox-circle-fill"></i>Unlimited Transactions</li>
+                                                <li><i className="ri-checkbox-circle-fill"></i>10,000 Per-Month Transactions</li>
                                                 <li><i className="ri-checkbox-circle-fill"></i><span>Unlimited Users</span></li>
                                                 <li><i className="ri-checkbox-circle-fill"></i><span>Custom Rule Creation</span></li>
                                                 <li><i className="ri-checkbox-circle-fill"></i>Custom Usage Reporting</li>
@@ -104,8 +104,8 @@ const PricePlan = () => {
                                         <div className="perfect-title">Perfect for Small Businesses</div>
                                         <div className="price-list">
                                             <ul className="list">
-                                                <li><i className="ri-checkbox-circle-fill"></i><span>5 Per-Month Transactions</span></li>
-                                                <li><i className="ri-checkbox-circle-fill check"></i>10 User Maximum</li>
+                                                <li><i className="ri-checkbox-circle-fill"></i><span>1,000 Per-Month Transactions</span></li>
+                                                <li><i className="ri-checkbox-circle-fill check"></i>10 User Contracts</li>
                                                 <li><i className="ri-checkbox-circle-fill check"></i>Automated Role Generation</li>
                                                 <li><i className="ri-checkbox-circle-fill check"></i>Basic Usage Reporting</li>
                                             </ul>
@@ -126,8 +126,8 @@ const PricePlan = () => {
                                         <div className="perfect-title">Perfect for Medium Businesses</div>
                                         <div className="price-list">
                                             <ul className="list">
-                                                <li><i className="ri-checkbox-circle-fill"></i>20 Per-Month Transactions</li>
-                                                <li><i className="ri-checkbox-circle-fill"></i><span>25 Users Maximum</span></li>
+                                                <li><i className="ri-checkbox-circle-fill"></i>5,000 Per-Month Transactions</li>
+                                                <li><i className="ri-checkbox-circle-fill"></i><span>25 Users Contracts</span></li>
                                                 <li><i className="ri-checkbox-circle-fill"></i><span>Automated Rule Generation</span></li>
                                                 <li><i className="ri-checkbox-circle-fill check"></i>Custom Usage Reporting</li>
                                             </ul>
@@ -151,7 +151,7 @@ const PricePlan = () => {
                                         <div className="perfect-title">Perfect for Enterprise Businesses</div>
                                         <div className="price-list">
                                             <ul className="list">
-                                                <li><i className="ri-checkbox-circle-fill"></i>Unlimited Transactions</li>
+                                                <li><i className="ri-checkbox-circle-fill"></i>10,000 Per-Month Transactions</li>
                                                 <li><i className="ri-checkbox-circle-fill"></i><span>Unlimited Users</span></li>
                                                 <li><i className="ri-checkbox-circle-fill"></i><span>Custom Rule Creation</span></li>
                                                 <li><i className="ri-checkbox-circle-fill"></i>Custom Usage Reporting</li>
