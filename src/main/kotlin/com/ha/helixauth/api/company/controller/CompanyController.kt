@@ -1,5 +1,6 @@
 package com.ha.helixauth.api.company.controller
 
+import com.ha.helixauth.api.company.model.dto.CancellationRequestDto
 import com.ha.helixauth.api.company.model.dto.CompanyDto
 import com.ha.helixauth.api.company.model.mapper.CompanyMapper
 import com.ha.helixauth.api.company.service.CompanyService
@@ -14,5 +15,10 @@ class CompanyController(val companyService: CompanyService) {
     fun registerCompany(@RequestBody companyDTO: CompanyDto): ResponseEntity<CompanyDto> {
         val company = companyService.registerCompany(CompanyMapper.toEntity(companyDTO))
         return ResponseEntity.ok(CompanyMapper.toDTO(company))
+    }
+
+    @PostMapping("/cancel-request")
+    fun requestCancellation(@RequestBody cancellationRequest: CancellationRequestDto): ResponseEntity<CancellationRequestDto> {
+        return ResponseEntity.ok(companyService.requestCancellation(cancellationRequest))
     }
 }
