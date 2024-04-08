@@ -20,20 +20,20 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
-      - name: Install Node.js and Yarn
+      - name: Set up Node.js and Yarn
         uses: actions/setup-node@v2
         with:
           node-version: '14'
           cache: yarn
 
-      - name: Install frontend dependencies
-        run: cd frontend && yarn install
+      - name: Navigate to frontend directory
+        run: cd src/frontend
 
-      - name: Install dependencies and build frontend
-        working-directory: src/frontend  # Navigate to the frontend directory
-        run: |
-          yarn install
-          yarn build
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build frontend
+        run: yarn build
 
       - name: Set up Kotlin
         uses: actions/setup-java@v2
