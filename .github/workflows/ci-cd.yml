@@ -29,8 +29,11 @@ jobs:
       - name: Install frontend dependencies
         run: cd frontend && yarn install
 
-      - name: Build frontend
-        run: cd frontend && yarn build
+      - name: Install dependencies and build frontend
+        working-directory: src/frontend  # Navigate to the frontend directory
+        run: |
+          yarn install
+          yarn build
 
       - name: Set up Kotlin
         uses: actions/setup-java@v2
