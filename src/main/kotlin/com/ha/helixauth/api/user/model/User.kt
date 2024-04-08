@@ -1,6 +1,7 @@
 package com.ha.helixauth.api.user.model
 
 import com.ha.helixauth.api.company.model.Company
+import java.time.LocalDateTime
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -21,5 +22,8 @@ class User(
     @Column(name = "last_name") var lastName: String,
     var avatar: String, // URL to the avatar image
     @ManyToOne
-    var company: Company
+    var company: Company,
+    @Column(name = "session_token") var sessionToken: String? = null,
+    @Column(name = "session_token_expiry") var sessionTokenExpiry: LocalDateTime? = null
+
 )

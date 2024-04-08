@@ -5,6 +5,7 @@ import com.ha.helixauth.api.user.model.User
 import com.ha.helixauth.api.user.model.dto.UserDto
 import com.ha.helixauth.api.user.model.mapper.UserMapper
 import com.ha.helixauth.api.user.repository.UserRepository
+import com.ha.helixauth.api.utils.config.TokenUtils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -52,12 +53,21 @@ class UserService(
         return user
     }
 
-    fun authenticateUser(email: String, password: String): UserDto {
-        println("authenticateUser REQUEST:: ${email}, $password")
-
+    fun authenticateUser(email: String, password: String): UserDto? {
         val user = userRepository.findByEmailAndPassword(email, password)
-        println("authenticateUser RESPONSE:: ${email}, $password")
-
-        return UserMapper.toDTO(user)
+        return if (user != null) {
+            val token = TokenUtils.generateToken()
+            // Save token and its expiry to the user entity in database
+            user.sessionToken = token
+            user.sessionTokenExpiry = TokenUtils.generateExpiry()
+            userRepository.save(user)
+            UserMapper.toDTO(user)
+        } else {
+            null
+        }
     }
-}
+
+    fun validateToken(token: String): Boolean? {
+        val user = userRepository.findByToken(token)
+        return user.sessionTokenExpiry?.let { TokenUtils.isTokenExpired(it) }
+    }}

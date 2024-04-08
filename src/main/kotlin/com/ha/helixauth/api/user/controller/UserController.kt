@@ -6,6 +6,7 @@ import com.ha.helixauth.api.user.model.dto.UserDto
 import com.ha.helixauth.api.user.model.mapper.UserMapper
 import com.ha.helixauth.api.user.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -26,6 +27,14 @@ class UserController(
         println("login REQUEST:: ${loginRequest.email}, ${loginRequest.password}")
         val user = userService.authenticateUser(loginRequest.email, loginRequest.password)
         return ResponseEntity.ok(user)
+    }
+    @PostMapping("/validateToken")
+    fun validateToken(@RequestBody token: String): ResponseEntity<String> {
+        return if (userService.validateToken(token) == true) {
+            ResponseEntity.ok("Token is valid")
+        } else {
+            ResponseEntity.status(HttpStatus.UNAUTHORIZED).build()
+        }
     }
 
     @PostMapping("/createUser")
