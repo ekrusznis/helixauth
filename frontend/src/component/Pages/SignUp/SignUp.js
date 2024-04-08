@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../Shared/Header';
 import BreadCums from '../../Shared/BreadCums';
-import SignUpForm from './SignUpForm';
+import RegisterSteps from './RegistrationSteps';
 import Apps from '../../Shared/Apps';
 import Footer from '../../Shared/Footer';
 
@@ -14,7 +14,7 @@ const SignUp = () => {
                 signUpBtn='inner-btn'
             />
             <BreadCums pageTitle='Sign Up' />
-            <SignUpForm />
+            <RegisterSteps />
             <Apps />
             <Footer />
         </>

@@ -13,7 +13,9 @@ object UserMapper {
         firstName = user.firstName,
         lastName = user.lastName,
         avatar = user.avatar,
-        companyId = user.company.id
+        companyId = user.company.id,
+        sessionToken = user.sessionToken,
+        sessionTokenExpiry = user.sessionTokenExpiry
     )
 
     fun toEntity(userDto: UserDto, company: Company): User = User(
@@ -23,6 +25,8 @@ object UserMapper {
         firstName = userDto.firstName,
         lastName = userDto.lastName,
         avatar = userDto.avatar,
-        company = company
+        company = company,
+        sessionToken = userDto.sessionToken,
+        sessionTokenExpiry = userDto.sessionTokenExpiry
     )
 }
