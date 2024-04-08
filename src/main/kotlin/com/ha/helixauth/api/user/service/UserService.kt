@@ -68,6 +68,6 @@ class UserService(
     }
 
     fun validateToken(token: String): Boolean? {
-        val user = userRepository.findByToken(token)
+        val user = userRepository.findBySessionToken(token)
         return user.sessionTokenExpiry?.let { TokenUtils.isTokenExpired(it) }
     }}
