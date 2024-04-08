@@ -21,13 +21,10 @@ jobs:
           distribution: 'adopt'
 
       - name: Set up Node.js and Yarn
-        uses: actions/setup-node@v2
+        uses: borales/actions-yarn@v2
         with:
-          node-version: '14'
-          cache: yarn
-
-      - name: Navigate to frontend directory
-        run: cd src/frontend
+          yarn-version: 1.x
+          node-version: 14.x
 
       - name: Install dependencies
         run: yarn install
