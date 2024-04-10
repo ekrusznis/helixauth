@@ -5,6 +5,7 @@ import com.ha.helixauth.api.company.model.AccountCancellation
 import com.ha.helixauth.api.company.model.Company
 import com.ha.helixauth.api.company.model.dto.CancellationRequestDto
 import com.ha.helixauth.api.user.model.User
+import java.util.*
 
 object CancellationRequestMapper {
     fun toDto(accountCancellation: AccountCancellation): CancellationRequestDto = CancellationRequestDto(
@@ -20,6 +21,6 @@ object CancellationRequestMapper {
         user = user,
         requestedDate = dto.requestedDate,
         cancelDate = dto.cancelDate,
-        cancellationStatus = CancellationStatus.valueOf(dto.status.toUpperCase())
+        cancellationStatus = CancellationStatus.valueOf(dto.status.uppercase(Locale.getDefault()))
     )
 }

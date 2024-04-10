@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-backend  # Corrected path
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/helix
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: password
+    depends_on:
+      - db
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-frontend  # Corrected path
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: helix
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"

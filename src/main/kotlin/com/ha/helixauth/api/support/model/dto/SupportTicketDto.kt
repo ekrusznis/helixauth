@@ -4,6 +4,7 @@ import com.ha.helixauth.api.support.enum.TicketType
 import com.ha.helixauth.api.support.model.SupportTicket
 import com.ha.helixauth.api.user.model.User
 import java.time.LocalDateTime
+import java.util.*
 
 data class SupportTicketDto(
     val type: String,
@@ -14,7 +15,7 @@ data class SupportTicketDto(
 ) {
     // Convert DTO to entity
     fun toEntity(user: User): SupportTicket = SupportTicket(
-        type = TicketType.valueOf(type.toUpperCase()),
+        type = TicketType.valueOf(type.uppercase(Locale.getDefault())),
         title = title,
         description = description,
         attachment = attachment,

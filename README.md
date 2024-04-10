@@ -31,6 +31,11 @@ HelixAuth is versatile enough to support a wide range of applications, including
 - **Blockchain:** Custom-built blockchain technology integrated into the backend for secure data management.
 - **Deployment:** Docker/Kubernetes for containerization and orchestration, ensuring high availability and scalability.
 
+## Development Setup
+Before running HelixAuth locally, make sure you have Docker installed on your machine. If you do not have Docker installed, please visit the Docker website and follow the installation instructions for your operating system.
+- Clone the repository to your local machine.
+- Run docker-compose up --build.
+
 ## Getting Started
 
 To integrate HelixAuth into your project, follow these steps:
