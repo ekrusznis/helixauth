@@ -8,12 +8,14 @@ import com.ha.helixauth.api.user.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("/api/user")
@@ -22,8 +24,12 @@ class UserController(
     @Autowired private val companyService: CompanyService
     ) {
 
+    // TODO - bindingResult will return a list of DTO validation errors, we should put that on all validated dto's
     @PostMapping("/login")
-    fun login(@RequestBody loginRequest: LoginRequestDto): ResponseEntity<UserDto> {
+    fun login(
+        @Valid @RequestBody loginRequest: LoginRequestDto,
+        bindingResult: BindingResult
+    ): ResponseEntity<UserDto> {
         println("login REQUEST:: ${loginRequest.email}, ${loginRequest.password}")
         val user = userService.authenticateUser(loginRequest.email, loginRequest.password)
         return ResponseEntity.ok(user)
