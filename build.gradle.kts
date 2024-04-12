@@ -33,6 +33,7 @@ dependencies {
     implementation("org.flywaydb:flyway-core")
     implementation("io.springfox:springfox-swagger2:3.0.0")
     implementation("io.springfox:springfox-swagger-ui:3.0.0")
+    implementation("com.google.code.gson:gson:2.8.6")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
