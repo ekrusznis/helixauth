@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.7.3"
     id("io.spring.dependency-management") version "1.1.4"
+    id("maven-publish") // Correct way to apply the maven-publish plugin
 //    id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
     kotlin("jvm") version "1.7.10"
     kotlin("plugin.spring") version "1.7.10"
@@ -51,4 +52,19 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            groupId = group.toString()
+            artifactId = "helixauth"
+            version = version.toString()
+        }
+    }
+}
+
+tasks.named("publishToMavenLocal").configure {
+    dependsOn("assemble")
 }
