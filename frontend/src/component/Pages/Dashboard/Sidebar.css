@@ -1,0 +1,41 @@
+/* Sidebar.css */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #343a40; /* Dark background color */
+    padding: 20px;
+    transition: width 0.3s ease; /* Smooth transition when collapsing/expanding */
+  }
+  
+  .sidebar-toggle-open {
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .logo img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #adb5bd; /* Light grey color */
+    margin-bottom: 10px;
+  }
+  
+  .nav-link {
+    color: #fff; /* White color for links */
+  }
+  
+  /* Collapsed Sidebar */
+  .sidebar.collapsed {
+    width: 50px; /* Collapsed width */
+  }
+  

@@ -1,0 +1,40 @@
+/* APISecurity.css */
+.api-security-page {
+    background-color: #000033; /* Darkest blue background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Add padding to content */
+  }
+  
+.navigation-bar {
+display: flex;
+border-bottom: 1px solid #ccc;
+margin-bottom: 20px;
+}
+
+.navigation-bar ul {
+display: flex;
+list-style: none;
+padding: 0;
+}
+
+.navigation-bar li {
+margin-right: 20px;
+cursor: pointer;
+}
+
+.boxes-section {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.box {
+flex: 1;
+background-color: #f0f0f0;
+height: 100px;
+margin-right: 10px;
+}
+
+.table-component {
+/* Add styles for the table component */
+}
