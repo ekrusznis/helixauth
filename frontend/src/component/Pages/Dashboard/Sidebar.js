@@ -9,7 +9,7 @@ const Sidebar = ({ collapsed, toggleSidebar }) => {
   const navigate = useNavigate();
 
   return (
-    <div className={`bg-dark text-white sidebar ${collapsed ? "collapsed" : ""}`}>
+    <div className={`text-white sidebar ${collapsed ? "collapsed" : ""}`}>
       {/* Icon to toggle sidebar */}
       <div className="sidebar-toggle-open" onClick={toggleSidebar}>
         <FaTimes size={20} />
@@ -34,7 +34,7 @@ const Sidebar = ({ collapsed, toggleSidebar }) => {
         <Nav.Link href="#compliance_frameworks">Compliance Frameworks</Nav.Link>
         {/* Section 3 */}
         <div className="section-title">Workloads and Data</div>
-        <NavLink to="/apisecurity">API Dashboard</NavLink>
+        <NavLink className='nav-link'to="/apisecurity">API Dashboard</NavLink>
         {/* Section 4 */}
         <div className="section-title">Build & Applications</div>
         <Nav.Link href="#ci_cd">CI/CD</Nav.Link>

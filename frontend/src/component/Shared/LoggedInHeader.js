@@ -31,11 +31,11 @@ const LoggedInHeader = () => {
 
       {/* Right content */}
       <div className="right-content">
-        <Button className="mr-2">
+        <Button className="mr-2 help">
           <FaQuestionCircle /> Help Center
         </Button>
-        <Button className="mr-2">
-          <FaBell /> Bell
+        <Button className="mr-2 bell">
+          <FaBell />
         </Button>
         <div className="user-profile">
           <div className="profile-circle">TT</div>
