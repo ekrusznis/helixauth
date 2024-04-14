@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.7.3"
     id("io.spring.dependency-management") version "1.1.4"
+    id("maven-publish") // Correct way to apply the maven-publish plugin
 //    id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
     kotlin("jvm") version "1.7.10"
     kotlin("plugin.spring") version "1.7.10"
@@ -22,6 +23,7 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-data-rest")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-mail")
@@ -30,6 +32,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.vladmihalcea:hibernate-types-52:2.21.1")
     implementation("org.flywaydb:flyway-core")
+    implementation("io.springfox:springfox-swagger2:3.0.0")
+    implementation("io.springfox:springfox-swagger-ui:3.0.0")
+    implementation("com.google.code.gson:gson:2.8.6")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
@@ -47,4 +52,19 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            groupId = group.toString()
+            artifactId = "helixauth"
+            version = version.toString()
+        }
+    }
+}
+
+tasks.named("publishToMavenLocal").configure {
+    dependsOn("assemble")
 }

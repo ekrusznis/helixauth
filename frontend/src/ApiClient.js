@@ -15,4 +15,10 @@ export const dashboardData = (userId) => {
   return apiClient.get('/dashboard', { userId });
 };
 
-// Export other API functions here
+export const supportTicket = (formData) => {
+  return apiClient.post('/help/tickets', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+};

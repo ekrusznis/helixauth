@@ -11,8 +11,8 @@ class BlockchainService(
 ) {
 
     fun registerCompanyWithBlockchain(company: Company): Company {
-        val company = companyService.registerCompany(company)
-        company.blockchain.addTransactionToBlockchain("Company ${company.name} registered")
+        val comp = companyService.registerCompany(company)
+        comp.blockchain.addTransactionToBlockchain("Company ${comp.name} registered")
         // Save the company with its updated blockchain to the database
         return company
     }

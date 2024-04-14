@@ -7,6 +7,7 @@ import com.ha.helixauth.api.user.model.mapper.UserMapper
 import com.ha.helixauth.api.user.repository.UserRepository
 import com.ha.helixauth.api.utils.config.TokenUtils
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.rest.webmvc.ResourceNotFoundException
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
@@ -36,10 +37,10 @@ class UserService(
         user.apply {
             username = userDTO.username
             password = hashedPassword // Ensure password is encrypted
-            email = email
-            firstName = firstName
-            lastName = lastName
-            avatar = avatar
+            email = userDTO.email
+            firstName = userDTO.firstName
+            lastName = userDTO.lastName
+            avatar = userDTO.avatar
         }
 
         // Record the update in the blockchain
@@ -68,6 +69,11 @@ class UserService(
     }
 
     fun validateToken(token: String): Boolean? {
-        val user = userRepository.findByToken(token)
+        val user = userRepository.findBySessionToken(token)
         return user.sessionTokenExpiry?.let { TokenUtils.isTokenExpired(it) }
-    }}
+    }
+
+    fun findUserById(userId: Long): User {
+        return userRepository.findById(userId).orElseThrow { ResourceNotFoundException("User not found with id: $userId") }
+    }
+}

@@ -1,5 +1,8 @@
 package com.ha.helixauth.api.annotation
 
-@Retention(AnnotationRetention.RUNTIME)
-@Target(AnnotationTarget.FUNCTION)
-annotation class HelixAuthorize(val role: String)
+import kotlin.annotation.AnnotationRetention.RUNTIME
+import kotlin.annotation.AnnotationTarget.FUNCTION
+
+@Retention(RUNTIME)
+@Target(FUNCTION)
+annotation class HelixAuthorize(val roles: Array<String>)

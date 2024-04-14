@@ -8,12 +8,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
 import org.springframework.web.servlet.config.annotation.CorsRegistry
+import org.springframework.web.servlet.config.annotation.EnableWebMvc
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
 
 @Configuration
 @EnableWebSecurity
+@EnableWebMvc
 class WebSecurityConfig: WebMvcConfigurer {
+
+    override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
+        registry.addResourceHandler("swagger-ui.html")
+            .addResourceLocations("classpath:/META-INF/resources/")
+        registry.addResourceHandler("/webjars/**")
+            .addResourceLocations("classpath:/META-INF/resources/webjars/")
+    }
 
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/api/**")
@@ -29,11 +39,12 @@ class WebSecurityConfig: WebMvcConfigurer {
     @Bean
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
         http
-            .cors() // Enable CORS and use default CorsConfigurationSource
+            .cors()
             .and()
             .csrf().disable()
             .authorizeRequests()
             .antMatchers("/api/**").permitAll()
+            .antMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html", "/webjars/**", "/swagger-resources/**").permitAll()
             .anyRequest().authenticated()
             .and()
             .formLogin().disable()
