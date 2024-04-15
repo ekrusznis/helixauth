@@ -67,10 +67,12 @@ jobs:
             # Set the Docker image names
             BACKEND_IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/helixauth-backend:${BACKEND_TAG}
             FRONTEND_IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/helixauth-frontend:${FRONTEND_TAG}
+            SPRING_PROFILES_ACTIVE=dev
 
             # Export these variables to be used by docker-compose
             export BACKEND_IMAGE
             export FRONTEND_IMAGE
+            export SPRING_PROFILES_ACTIVE
 
             # Restart the applications using Docker Compose
             # Assuming docker-compose.yml uses environment variables for image tags

@@ -8,6 +8,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/helix
       SPRING_DATASOURCE_USERNAME: sa
       SPRING_DATASOURCE_PASSWORD: password
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-dev}
     depends_on:
       - db
   frontend:
@@ -26,4 +27,4 @@ services:
     volumes:
       - /mnt/db_volume_nyc1_01:/var/lib/postgresql/data
     ports:
-      - 5432
+      - 5432:5432
