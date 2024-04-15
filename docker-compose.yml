@@ -14,6 +14,7 @@ services:
     image: ${FRONTEND_IMAGE:-geass/helixauth-frontend:latest}
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - backend
   db:
@@ -22,5 +23,7 @@ services:
       POSTGRES_DB: helix
       POSTGRES_USER: sa
       POSTGRES_PASSWORD: password
+    volumes:
+      - /mnt/db_volume_nyc1_01:/var/lib/postgresql/data
     ports:
       - 5432

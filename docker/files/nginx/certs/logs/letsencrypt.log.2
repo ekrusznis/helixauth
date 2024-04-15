@@ -1,0 +1,458 @@
+2024-04-15 15:35:58,721:DEBUG:certbot._internal.main:certbot version: 2.10.0
+2024-04-15 15:35:58,721:DEBUG:certbot._internal.main:Location of certbot entry point: /Users/muhammetarslan/.pyenv/versions/3.10.13/bin/certbot
+2024-04-15 15:35:58,721:DEBUG:certbot._internal.main:Arguments: ['-d', 'helixauth.com', '-d', 'dev.helixauth.com', '--dns-digitalocean', '--dns-digitalocean-credentials', '/Users/muhammetarslan/certbot-creds.ini', '--config-dir', './config', '--work-dir', './work', '--logs-dir', './logs', '-m', 'ekrusznis@gmail.com', '--agree-tos']
+2024-04-15 15:35:58,721:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#dns-digitalocean,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2024-04-15 15:35:58,745:DEBUG:certbot._internal.log:Root logging level set at 30
+2024-04-15 15:35:58,745:DEBUG:certbot._internal.plugins.selection:Requested authenticator dns-digitalocean and installer None
+2024-04-15 15:35:58,745:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * dns-digitalocean
+Description: Obtain certificates using a DNS TXT record (if you are using DigitalOcean for DNS).
+Interfaces: Authenticator, Plugin
+Entry point: EntryPoint(name='dns-digitalocean', value='certbot_dns_digitalocean._internal.dns_digitalocean:Authenticator', group='certbot.plugins')
+Initialized: <certbot_dns_digitalocean._internal.dns_digitalocean.Authenticator object at 0x10740bc10>
+Prep: True
+2024-04-15 15:35:58,745:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot_dns_digitalocean._internal.dns_digitalocean.Authenticator object at 0x10740bc10> and installer None
+2024-04-15 15:35:58,745:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator dns-digitalocean, Installer None
+2024-04-15 15:35:58,821:DEBUG:certbot._internal.main:Picked account: <Account(RegistrationResource(body=Registration(key=None, contact=(), agreement=None, status=None, terms_of_service_agreed=None, only_return_existing=None, external_account_binding=None), uri='https://acme-v02.api.letsencrypt.org/acme/acct/1673050987', new_authzr_uri=None, terms_of_service=None), 3ba539656fa959312c9b68c65983547c, Meta(creation_dt=datetime.datetime(2024, 4, 15, 13, 10, 55, tzinfo=<UTC>), creation_host='31.0.168.192.in-addr.arpa', register_to_eff='ekrusznis@gmail.com'))>
+2024-04-15 15:35:58,830:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2024-04-15 15:35:58,837:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
+2024-04-15 15:35:59,464:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "GET /directory HTTP/1.1" 200 747
+2024-04-15 15:35:59,464:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Mon, 15 Apr 2024 13:35:59 GMT
+Content-Type: application/json
+Content-Length: 747
+Connection: keep-alive
+Cache-Control: public, max-age=0, no-cache
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "keyChange": "https://acme-v02.api.letsencrypt.org/acme/key-change",
+  "meta": {
+    "caaIdentities": [
+      "letsencrypt.org"
+    ],
+    "termsOfService": "https://letsencrypt.org/documents/LE-SA-v1.4-April-3-2024.pdf",
+    "website": "https://letsencrypt.org"
+  },
+  "newAccount": "https://acme-v02.api.letsencrypt.org/acme/new-acct",
+  "newNonce": "https://acme-v02.api.letsencrypt.org/acme/new-nonce",
+  "newOrder": "https://acme-v02.api.letsencrypt.org/acme/new-order",
+  "renewalInfo": "https://acme-v02.api.letsencrypt.org/draft-ietf-acme-ari-02/renewalInfo/",
+  "revokeCert": "https://acme-v02.api.letsencrypt.org/acme/revoke-cert",
+  "tJCUQHwizRg": "https://community.letsencrypt.org/t/adding-random-entries-to-the-directory/33417"
+}
+2024-04-15 15:35:59,465:DEBUG:certbot._internal.display.obj:Notifying user: Requesting a certificate for helixauth.com and dev.helixauth.com
+2024-04-15 15:35:59,472:DEBUG:acme.client:Requesting fresh nonce
+2024-04-15 15:35:59,472:DEBUG:acme.client:Sending HEAD request to https://acme-v02.api.letsencrypt.org/acme/new-nonce.
+2024-04-15 15:35:59,646:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "HEAD /acme/new-nonce HTTP/1.1" 200 0
+2024-04-15 15:35:59,646:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Mon, 15 Apr 2024 13:35:59 GMT
+Connection: keep-alive
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: 41Xn7EjcXczGkJ2R43dq300xnbRgmw3YWiIbb4sonclSn4FwdVE
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+
+2024-04-15 15:35:59,647:DEBUG:acme.client:Storing nonce: 41Xn7EjcXczGkJ2R43dq300xnbRgmw3YWiIbb4sonclSn4FwdVE
+2024-04-15 15:35:59,647:DEBUG:acme.client:JWS payload:
+b'{\n  "identifiers": [\n    {\n      "type": "dns",\n      "value": "helixauth.com"\n    },\n    {\n      "type": "dns",\n      "value": "dev.helixauth.com"\n    }\n  ]\n}'
+2024-04-15 15:35:59,650:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/new-order:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICI0MVhuN0VqY1hjekdrSjJSNDNkcTMwMHhuYlJnbXczWVdpSWJiNHNvbmNsU240RndkVkUiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL25ldy1vcmRlciJ9",
+  "signature": "ks3KzK8aorkxOQzgBYlGU_sBjI5H9S3Dnv0xq-xwttjHxsHDD0x6cFdRylSmbybNk-KNklWCCZv_8IUwSSxdjRrFIHYL4zmFR3jEX27ynnf0TPefIZ42LHExLXtNroo7IM4Z2lUOL8OHuK36kxLSMENyS9tfkVcAoJuAMUe7vOd43XzZMBTLjIfrc9TbweIVGi0YC0bNcFXd3ZHcoz-_4uWRDAQxMVLMBOspU_C0vEGNRTznEwYPKQafq3deaQdgjeyC0t4MQG6LdCU1gEXWrR8PYkK0RXwGHdYJA2bpxiBojOnG05Rvo1Ogisc0CGet2x1fEZDxA7ye8qGe-4GoMw",
+  "payload": "ewogICJpZGVudGlmaWVycyI6IFsKICAgIHsKICAgICAgInR5cGUiOiAiZG5zIiwKICAgICAgInZhbHVlIjogImhlbGl4YXV0aC5jb20iCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJkbnMiLAogICAgICAidmFsdWUiOiAiZGV2LmhlbGl4YXV0aC5jb20iCiAgICB9CiAgXQp9"
+}
+2024-04-15 15:35:59,961:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/new-order HTTP/1.1" 201 479
+2024-04-15 15:35:59,962:DEBUG:acme.client:Received response:
+HTTP 201
+Server: nginx
+Date: Mon, 15 Apr 2024 13:35:59 GMT
+Content-Type: application/json
+Content-Length: 479
+Connection: keep-alive
+Boulder-Requester: 1673050987
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Location: https://acme-v02.api.letsencrypt.org/acme/order/1673050987/261159511187
+Replay-Nonce: fYM0lmBizzWUoME5VJRgZhQICh0Dulv8bOXGVNGz4aRgtAusGH4
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "status": "pending",
+  "expires": "2024-04-22T13:24:05Z",
+  "identifiers": [
+    {
+      "type": "dns",
+      "value": "dev.helixauth.com"
+    },
+    {
+      "type": "dns",
+      "value": "helixauth.com"
+    }
+  ],
+  "authorizations": [
+    "https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229677",
+    "https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229687"
+  ],
+  "finalize": "https://acme-v02.api.letsencrypt.org/acme/finalize/1673050987/261159511187"
+}
+2024-04-15 15:35:59,962:DEBUG:acme.client:Storing nonce: fYM0lmBizzWUoME5VJRgZhQICh0Dulv8bOXGVNGz4aRgtAusGH4
+2024-04-15 15:35:59,962:DEBUG:acme.client:JWS payload:
+b''
+2024-04-15 15:35:59,964:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229677:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICJmWU0wbG1CaXp6V1VvTUU1VkpSZ1poUUlDaDBEdWx2OGJPWEdWTkd6NGFSZ3RBdXNHSDQiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzMzODc5NzIyOTY3NyJ9",
+  "signature": "ADhwJm3LtvmjPgVKv4uqYPhZBKaFSuUx9XxeuGbNOA4s3HieVt_vylrNYXI8Uz1mf_tb8U9TB2kw7NWZa6gnrP6kaqyjX33OaXCAZfg6DMCSjQSbt-5Iuk68rqW-E1DFR8ViK0btiZNgkPzJMEjWyv6v2o6udG8qevMXnoDUR_cUA3iYOmyjMVgIak73UVzygbnCFH-nHNmSiGpE0R8YE6ZdxKAaU1PJS0I0114dxK-O6u1AEu2lAwcXH20GQeo3hY2g1iIY5i_-dfS4bRMWWMwt_ZaRMI166OZJyn-RQBX0Eva2qEIMHk2A7e-uS_3Upx_tt4J7TaTVbEVaCmsx2Q",
+  "payload": ""
+}
+2024-04-15 15:36:00,147:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/338797229677 HTTP/1.1" 200 801
+2024-04-15 15:36:00,148:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Mon, 15 Apr 2024 13:36:00 GMT
+Content-Type: application/json
+Content-Length: 801
+Connection: keep-alive
+Boulder-Requester: 1673050987
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: 41Xn7EjcCOFE6I1i245uPGQRcwALxwOXvFiS7VNjVygOtq04Gg8
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "identifier": {
+    "type": "dns",
+    "value": "dev.helixauth.com"
+  },
+  "status": "pending",
+  "expires": "2024-04-22T13:24:05Z",
+  "challenges": [
+    {
+      "type": "http-01",
+      "status": "pending",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/CdN9qw",
+      "token": "G3yDNOUSaNW5uKcBeHB0bgRqJT_G8Ar4edqRXCNvKf4"
+    },
+    {
+      "type": "dns-01",
+      "status": "pending",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/gSkAqQ",
+      "token": "G3yDNOUSaNW5uKcBeHB0bgRqJT_G8Ar4edqRXCNvKf4"
+    },
+    {
+      "type": "tls-alpn-01",
+      "status": "pending",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/6SR4WA",
+      "token": "G3yDNOUSaNW5uKcBeHB0bgRqJT_G8Ar4edqRXCNvKf4"
+    }
+  ]
+}
+2024-04-15 15:36:00,149:DEBUG:acme.client:Storing nonce: 41Xn7EjcCOFE6I1i245uPGQRcwALxwOXvFiS7VNjVygOtq04Gg8
+2024-04-15 15:36:00,149:DEBUG:acme.client:JWS payload:
+b''
+2024-04-15 15:36:00,152:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229687:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICI0MVhuN0VqY0NPRkU2STFpMjQ1dVBHUVJjd0FMeHdPWHZGaVM3Vk5qVnlnT3RxMDRHZzgiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzMzODc5NzIyOTY4NyJ9",
+  "signature": "qsJdNEow998mzx6WcaBw2eEaerTY_TzB1lvr1R46HeyRV0T8GR1xSFSM1WnkCSzh5GxJxMuXBBYi9lKU7nN-FS1zomqRhUt1X7cZisdMabnUxIogi2HLnah9wM1FcjNMabh3nOBld6RppGGqzDgL86RW_qMSUOwRG5FUz6E0cWZQ0rqpLnJN25OasK36iEKmLnwa0utZliF33VokNnbcMN3EoW4uBfR8pimb2GKqO6k062G42-fhOWVhZr1i4d0Pz1yYOTYJdxwMVxvUTtq3myfP3foVHKVvazGirPt4sEtY-EhVVnAhQzr9epo53ksvkCKp_PtKUR-ueK-lWQcWRw",
+  "payload": ""
+}
+2024-04-15 15:36:00,323:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/338797229687 HTTP/1.1" 200 797
+2024-04-15 15:36:00,324:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Mon, 15 Apr 2024 13:36:00 GMT
+Content-Type: application/json
+Content-Length: 797
+Connection: keep-alive
+Boulder-Requester: 1673050987
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: 41Xn7EjcZP2zOuvQtzANVvcfggjxp_pylM5oiYlsulf6t1EEfhE
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "identifier": {
+    "type": "dns",
+    "value": "helixauth.com"
+  },
+  "status": "pending",
+  "expires": "2024-04-22T13:24:05Z",
+  "challenges": [
+    {
+      "type": "http-01",
+      "status": "pending",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229687/BdRNFA",
+      "token": "CTqCzTw47-M7fRKo1NMgj3o3prYkhvGCrhfLrbi3d9U"
+    },
+    {
+      "type": "dns-01",
+      "status": "pending",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229687/yZZ3Xw",
+      "token": "CTqCzTw47-M7fRKo1NMgj3o3prYkhvGCrhfLrbi3d9U"
+    },
+    {
+      "type": "tls-alpn-01",
+      "status": "pending",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229687/BpxQzg",
+      "token": "CTqCzTw47-M7fRKo1NMgj3o3prYkhvGCrhfLrbi3d9U"
+    }
+  ]
+}
+2024-04-15 15:36:00,324:DEBUG:acme.client:Storing nonce: 41Xn7EjcZP2zOuvQtzANVvcfggjxp_pylM5oiYlsulf6t1EEfhE
+2024-04-15 15:36:00,325:INFO:certbot._internal.auth_handler:Performing the following challenges:
+2024-04-15 15:36:00,325:INFO:certbot._internal.auth_handler:dns-01 challenge for dev.helixauth.com
+2024-04-15 15:36:00,325:INFO:certbot._internal.auth_handler:dns-01 challenge for helixauth.com
+2024-04-15 15:36:00,328:DEBUG:digitalocean:GET https://api.digitalocean.com/v2/domains/ params:{'per_page': 200} {'Content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:00,331:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:00,771:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "GET /v2/domains/?per_page=200 HTTP/1.1" 200 None
+2024-04-15 15:36:00,785:DEBUG:certbot_dns_digitalocean._internal.dns_digitalocean:Found base domain for dev.helixauth.com using name helixauth.com
+2024-04-15 15:36:00,786:DEBUG:digitalocean:POST https://api.digitalocean.com/v2/domains/helixauth.com/records data:{'type': 'TXT', 'name': '_acme-challenge.dev', 'data': 'Ti8Pzy5GN-0NiH47RwMkgfhCjbdgqCHEAnXlgvgKPSE', 'ttl': 30} {'Content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:00,788:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:01,558:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "POST /v2/domains/helixauth.com/records HTTP/1.1" 201 205
+2024-04-15 15:36:01,561:DEBUG:certbot_dns_digitalocean._internal.dns_digitalocean:Successfully added TXT record with id: 1735449288
+2024-04-15 15:36:01,564:DEBUG:digitalocean:GET https://api.digitalocean.com/v2/domains/ params:{'per_page': 200} {'Content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:01,568:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:02,079:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "GET /v2/domains/?per_page=200 HTTP/1.1" 200 None
+2024-04-15 15:36:02,080:DEBUG:certbot_dns_digitalocean._internal.dns_digitalocean:Found base domain for helixauth.com using name helixauth.com
+2024-04-15 15:36:02,081:DEBUG:digitalocean:POST https://api.digitalocean.com/v2/domains/helixauth.com/records data:{'type': 'TXT', 'name': '_acme-challenge', 'data': 'exMMprXgeWRTCV9waA29qBj2fjGc31O7VJWsSz56oNU', 'ttl': 30} {'Content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:02,084:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:02,413:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "POST /v2/domains/helixauth.com/records HTTP/1.1" 201 201
+2024-04-15 15:36:02,418:DEBUG:certbot_dns_digitalocean._internal.dns_digitalocean:Successfully added TXT record with id: 1735449290
+2024-04-15 15:36:02,422:DEBUG:certbot._internal.display.obj:Notifying user: Waiting 10 seconds for DNS changes to propagate
+2024-04-15 15:36:12,430:DEBUG:acme.client:JWS payload:
+b'{}'
+2024-04-15 15:36:12,438:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/gSkAqQ:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICI0MVhuN0VqY1pQMnpPdXZRdHpBTlZ2Y2ZnZ2p4cF9weWxNNW9pWWxzdWxmNnQxRUVmaEUiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2NoYWxsLXYzLzMzODc5NzIyOTY3Ny9nU2tBcVEifQ",
+  "signature": "0TI4JR0FVFnf0Njp8sJ5DrLbTvaL_eiuY_mYzlc6L9uvqCq_LsmKxo7iYPdcLxt5CSb0UIa1okj84exKSDjlKgjcni4xLKSGIiMQma0by8ex0jwzL00tXblzcxiHUZMd0vOoXGZkrzrQ9Lx_mah5W4iFmN9HZaCrIo02dqyVLEo3BuxN88VQdcaXjWT0WdARCEe5VTwXIT1L2QLkHPmNuK2CBN-yfeo2kvcNDZY8wxqJJtqWhmUwcGAb3Ke9LWHtu7qpbe0X2pkjtkj6rpnKKqReTchVnMOh_dNsPKs8FacXnI-hHn1jVlCBUBIlqe0oqUDeVJ2lBnU473AmSpNXrA",
+  "payload": "e30"
+}
+2024-04-15 15:36:12,741:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/chall-v3/338797229677/gSkAqQ HTTP/1.1" 200 186
+2024-04-15 15:36:12,741:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Mon, 15 Apr 2024 13:36:12 GMT
+Content-Type: application/json
+Content-Length: 186
+Connection: keep-alive
+Boulder-Requester: 1673050987
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index", <https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229677>;rel="up"
+Location: https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/gSkAqQ
+Replay-Nonce: fYM0lmBioPSL3v-xsqZZyrdqPzJFn_MH8XCqmagocP1tL5kNvgY
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "type": "dns-01",
+  "status": "pending",
+  "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/gSkAqQ",
+  "token": "G3yDNOUSaNW5uKcBeHB0bgRqJT_G8Ar4edqRXCNvKf4"
+}
+2024-04-15 15:36:12,741:DEBUG:acme.client:Storing nonce: fYM0lmBioPSL3v-xsqZZyrdqPzJFn_MH8XCqmagocP1tL5kNvgY
+2024-04-15 15:36:12,742:DEBUG:acme.client:JWS payload:
+b'{}'
+2024-04-15 15:36:12,743:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229687/yZZ3Xw:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICJmWU0wbG1CaW9QU0wzdi14c3FaWnlyZHFQekpGbl9NSDhYQ3FtYWdvY1AxdEw1a052Z1kiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2NoYWxsLXYzLzMzODc5NzIyOTY4Ny95WlozWHcifQ",
+  "signature": "aE62J3TzF802aiZPbMFVOkjmuM2ckahVpzgdCG6BXcJDRQlWt_HljCyufFZFhYls28LIrPTlQJA9cn5opig_RCLK2XYdqvz_tnqJLM-TYvh9SklFjIhTeOiubRutyKi-8dONwG7GuCl19GXxWF872S0AtBYdzJmgTwKnedmreOeOjZcQGPjBXwPF03SmltOmfCNRYG2pWfuSdmflHblgy9-FKi0xRnVmBtKOCGTaKBqK59VVY7dnguuJKjCZI387bjiyqaEac1FxNNx7phNHoBBSnotoUp6U0as-HV6nLimhv3RPVGk-dWswhMWx0mQV5EFiJNt4izCoU-IXOvvanQ",
+  "payload": "e30"
+}
+2024-04-15 15:36:13,067:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/chall-v3/338797229687/yZZ3Xw HTTP/1.1" 200 186
+2024-04-15 15:36:13,068:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Mon, 15 Apr 2024 13:36:12 GMT
+Content-Type: application/json
+Content-Length: 186
+Connection: keep-alive
+Boulder-Requester: 1673050987
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index", <https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229687>;rel="up"
+Location: https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229687/yZZ3Xw
+Replay-Nonce: fYM0lmBia0mDmh_XN9tljbsw3xrWP17nXhnQ2evtAFhka7gETLM
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "type": "dns-01",
+  "status": "pending",
+  "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229687/yZZ3Xw",
+  "token": "CTqCzTw47-M7fRKo1NMgj3o3prYkhvGCrhfLrbi3d9U"
+}
+2024-04-15 15:36:13,068:DEBUG:acme.client:Storing nonce: fYM0lmBia0mDmh_XN9tljbsw3xrWP17nXhnQ2evtAFhka7gETLM
+2024-04-15 15:36:13,068:INFO:certbot._internal.auth_handler:Waiting for verification...
+2024-04-15 15:36:14,074:DEBUG:acme.client:JWS payload:
+b''
+2024-04-15 15:36:14,078:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229677:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICJmWU0wbG1CaWEwbURtaF9YTjl0bGpic3czeHJXUDE3blhoblEyZXZ0QUZoa2E3Z0VUTE0iLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzMzODc5NzIyOTY3NyJ9",
+  "signature": "jczgfw7dbfPjENk2k0ZFSRBF5NlRxCQ17fiuD2sE1Itf7aUNjdr0RkKS7CRykxH3v_sPN2GxjOqfjjLf_KzlYZHyu7nZ7YO37oIAlJ1LmGH0SJ9FH6c9LYWlpT_v0mnHwFynEhsm3OjNgJPYDwR9EKBuPQvPnI0wW0OpJeoYt8wn6v8zNPicWPLLGXLagiitcZOOPM70CSMmkreYhuSXL3DTCCw3RQ4o-7ao8L5_Jp4tNO94hdR0-nk2_T1-H1KobI65_K1MOPyA3iQtysb0Cp7dwFtx8g0LX3E_ryiFmZoZ61TIzo0GGoyHKpLSYOeI1WYzPyr-TxUQsaaVWg0rdA",
+  "payload": ""
+}
+2024-04-15 15:36:14,286:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/338797229677 HTTP/1.1" 200 582
+2024-04-15 15:36:14,287:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Mon, 15 Apr 2024 13:36:14 GMT
+Content-Type: application/json
+Content-Length: 582
+Connection: keep-alive
+Boulder-Requester: 1673050987
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: fYM0lmBiX-LPngwsSTYbPnH6t-shSL3sukhGS7bx8GXxqUgwhAA
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "identifier": {
+    "type": "dns",
+    "value": "dev.helixauth.com"
+  },
+  "status": "valid",
+  "expires": "2024-05-15T13:36:13Z",
+  "challenges": [
+    {
+      "type": "dns-01",
+      "status": "valid",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/gSkAqQ",
+      "token": "G3yDNOUSaNW5uKcBeHB0bgRqJT_G8Ar4edqRXCNvKf4",
+      "validationRecord": [
+        {
+          "hostname": "dev.helixauth.com",
+          "resolverAddrs": [
+            "10.0.12.83:29255"
+          ]
+        }
+      ],
+      "validated": "2024-04-15T13:36:12Z"
+    }
+  ]
+}
+2024-04-15 15:36:14,287:DEBUG:acme.client:Storing nonce: fYM0lmBiX-LPngwsSTYbPnH6t-shSL3sukhGS7bx8GXxqUgwhAA
+2024-04-15 15:36:14,288:DEBUG:acme.client:JWS payload:
+b''
+2024-04-15 15:36:14,293:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229687:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICJmWU0wbG1CaVgtTFBuZ3dzU1RZYlBuSDZ0LXNoU0wzc3VraEdTN2J4OEdYeHFVZ3doQUEiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzMzODc5NzIyOTY4NyJ9",
+  "signature": "GX8Rj1D8UJOpdn6wccuJvZndhSMPzmMrF3j6XM4wSe8XQz1FCfRU-x2OsEGtkxfNArB8yjmpaMTqpYv2qsXoNt5CfqBdsfTLlrlzPhHfZonbAnqbimaQQr_FU-NN-uAdOSyW0OrYhL6LynH4K5WztJYXwHPazi60CmM09agnMGdBAmKZ1hfOdZ4QzHjlLz0o_0AJ5nRmt3VdBxDWwP8Z9J4idI8bWPupXE6esJ1gdNhtgZUWHGRU6Mb-rw-pfUDvRxXU8q36730B4fGWj8Rmg98Nbt6kvQYuRCB_USYqEQIMB_5ouwJ17jUsZNiqaRnakrbaP2_6YCr2oY2s3PhbaQ",
+  "payload": ""
+}
+2024-04-15 15:36:14,470:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/338797229687 HTTP/1.1" 200 646
+2024-04-15 15:36:14,470:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Mon, 15 Apr 2024 13:36:14 GMT
+Content-Type: application/json
+Content-Length: 646
+Connection: keep-alive
+Boulder-Requester: 1673050987
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: 41Xn7Ejc1zvRX_5IVi6bzm1WX9pL5xqiVP0pze_yHVrTGiI2nZM
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "identifier": {
+    "type": "dns",
+    "value": "helixauth.com"
+  },
+  "status": "invalid",
+  "expires": "2024-04-22T13:24:05Z",
+  "challenges": [
+    {
+      "type": "dns-01",
+      "status": "invalid",
+      "error": {
+        "type": "urn:ietf:params:acme:error:unauthorized",
+        "detail": "Incorrect TXT record \"fQiSYKgwnMHj0iZNXNUXGhKXf7GulJ4Qu9lYrorr0jw\" found at _acme-challenge.helixauth.com",
+        "status": 403
+      },
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229687/yZZ3Xw",
+      "token": "CTqCzTw47-M7fRKo1NMgj3o3prYkhvGCrhfLrbi3d9U",
+      "validated": "2024-04-15T13:36:12Z"
+    }
+  ]
+}
+2024-04-15 15:36:14,470:DEBUG:acme.client:Storing nonce: 41Xn7Ejc1zvRX_5IVi6bzm1WX9pL5xqiVP0pze_yHVrTGiI2nZM
+2024-04-15 15:36:14,471:INFO:certbot._internal.auth_handler:Challenge failed for domain helixauth.com
+2024-04-15 15:36:14,471:INFO:certbot._internal.auth_handler:dns-01 challenge for helixauth.com
+2024-04-15 15:36:14,471:DEBUG:certbot._internal.display.obj:Notifying user: 
+Certbot failed to authenticate some domains (authenticator: dns-digitalocean). The Certificate Authority reported these problems:
+  Domain: helixauth.com
+  Type:   unauthorized
+  Detail: Incorrect TXT record "fQiSYKgwnMHj0iZNXNUXGhKXf7GulJ4Qu9lYrorr0jw" found at _acme-challenge.helixauth.com
+
+Hint: The Certificate Authority failed to verify the DNS TXT records created by --dns-digitalocean. Ensure the above domains are hosted by this DNS provider, or try increasing --dns-digitalocean-propagation-seconds (currently 10 seconds).
+
+2024-04-15 15:36:14,472:DEBUG:certbot._internal.error_handler:Encountered exception:
+Traceback (most recent call last):
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/auth_handler.py", line 108, in handle_authorizations
+    self._poll_authorizations(authzrs, max_retries, max_time_mins, best_effort)
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/auth_handler.py", line 212, in _poll_authorizations
+    raise errors.AuthorizationError('Some challenges have failed.')
+certbot.errors.AuthorizationError: Some challenges have failed.
+
+2024-04-15 15:36:14,472:DEBUG:certbot._internal.error_handler:Calling registered functions
+2024-04-15 15:36:14,473:INFO:certbot._internal.auth_handler:Cleaning up challenges
+2024-04-15 15:36:14,473:DEBUG:digitalocean:GET https://api.digitalocean.com/v2/domains/ params:{'per_page': 200} {'Content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:14,476:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:14,972:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "GET /v2/domains/?per_page=200 HTTP/1.1" 200 None
+2024-04-15 15:36:14,973:DEBUG:certbot_dns_digitalocean._internal.dns_digitalocean:Found base domain for dev.helixauth.com using name helixauth.com
+2024-04-15 15:36:14,973:DEBUG:digitalocean:GET https://api.digitalocean.com/v2/domains/helixauth.com/records/ params:{'per_page': 200} {'Content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:14,975:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:15,432:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "GET /v2/domains/helixauth.com/records/?per_page=200 HTTP/1.1" 200 None
+2024-04-15 15:36:15,434:DEBUG:certbot_dns_digitalocean._internal.dns_digitalocean:Removing TXT record with id: 1735449288
+2024-04-15 15:36:15,434:DEBUG:digitalocean:DELETE https://api.digitalocean.com/v2/domains/helixauth.com/records/1735449288 data:{} {'content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:15,437:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:16,408:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "DELETE /v2/domains/helixauth.com/records/1735449288 HTTP/1.1" 204 0
+2024-04-15 15:36:16,420:DEBUG:digitalocean:GET https://api.digitalocean.com/v2/domains/ params:{'per_page': 200} {'Content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:16,423:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:17,889:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "GET /v2/domains/?per_page=200 HTTP/1.1" 200 None
+2024-04-15 15:36:17,892:DEBUG:certbot_dns_digitalocean._internal.dns_digitalocean:Found base domain for helixauth.com using name helixauth.com
+2024-04-15 15:36:17,892:DEBUG:digitalocean:GET https://api.digitalocean.com/v2/domains/helixauth.com/records/ params:{'per_page': 200} {'Content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:17,896:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:18,185:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "GET /v2/domains/helixauth.com/records/?per_page=200 HTTP/1.1" 200 None
+2024-04-15 15:36:18,188:DEBUG:certbot_dns_digitalocean._internal.dns_digitalocean:Removing TXT record with id: 1735448387
+2024-04-15 15:36:18,188:DEBUG:digitalocean:DELETE https://api.digitalocean.com/v2/domains/helixauth.com/records/1735448387 data:{} {'content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:18,192:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:18,546:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "DELETE /v2/domains/helixauth.com/records/1735448387 HTTP/1.1" 204 0
+2024-04-15 15:36:18,548:DEBUG:certbot_dns_digitalocean._internal.dns_digitalocean:Removing TXT record with id: 1735449290
+2024-04-15 15:36:18,548:DEBUG:digitalocean:DELETE https://api.digitalocean.com/v2/domains/helixauth.com/records/1735449290 data:{} {'content-type': 'application/json', 'Authorization': 'Bearer TOKEN0', 'User-Agent': 'python-digitalocean/1.16.0 requests/2.31.0'} None
+2024-04-15 15:36:18,552:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.digitalocean.com:443
+2024-04-15 15:36:18,885:DEBUG:urllib3.connectionpool:https://api.digitalocean.com:443 "DELETE /v2/domains/helixauth.com/records/1735449290 HTTP/1.1" 204 0
+2024-04-15 15:36:18,898:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/bin/certbot", line 8, in <module>
+    sys.exit(main())
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/main.py", line 1600, in certonly
+    lineage = _get_and_save_cert(le_client, config, domains, certname, lineage)
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/main.py", line 143, in _get_and_save_cert
+    lineage = le_client.obtain_and_enroll_certificate(domains, certname)
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/client.py", line 517, in obtain_and_enroll_certificate
+    cert, chain, key, _ = self.obtain_certificate(domains)
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/client.py", line 428, in obtain_certificate
+    orderr = self._get_order_and_authorizations(csr.data, self.config.allow_subset_of_names)
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/client.py", line 496, in _get_order_and_authorizations
+    authzr = self.auth_handler.handle_authorizations(orderr, self.config, best_effort)
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/auth_handler.py", line 108, in handle_authorizations
+    self._poll_authorizations(authzrs, max_retries, max_time_mins, best_effort)
+  File "/Users/muhammetarslan/.pyenv/versions/3.10.13/lib/python3.10/site-packages/certbot/_internal/auth_handler.py", line 212, in _poll_authorizations
+    raise errors.AuthorizationError('Some challenges have failed.')
+certbot.errors.AuthorizationError: Some challenges have failed.
+2024-04-15 15:36:18,901:ERROR:certbot._internal.log:Some challenges have failed.

@@ -70,8 +70,8 @@ jobs:
           key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
           script: |
             # Set environment variables for the Docker image tags
-            BACKEND_TAG=${{ github.sha }}
-            FRONTEND_TAG=${{ github.sha }}
+            BACKEND_TAG=${{ steps.docker_tag.outputs.tag }}
+            FRONTEND_TAG=${{ steps.docker_tag.outputs.tag }}
 
             # Set the Docker image names
             BACKEND_IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/helixauth-backend:${BACKEND_TAG}
