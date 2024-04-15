@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.DEV_USERNAME }}
           key: ${{ secrets.DEV_SSH_PRIVATE_KEY }}
           source: "./docker-compose.yml"
-          target: "/var/www/dev.helixauth.com/docker-compose.yml"
+          target: "/var/www/dev.helixauth.com/"
 
       - name: Deploy to Development Server
         uses: appleboy/ssh-action@master
