@@ -38,15 +38,18 @@ GitHub Secrets store sensitive data, like access tokens and SSH keys, needed for
 - **DOCKERHUB_USERNAME**: Your DockerHub account username.
 - **DOCKERHUB_TOKEN**: The access token generated previously.
 - **DEV_HOST**: The IP address of your VPS.
-- **DEV_USER**: The user for SSH connections, e.g., `root`.
+- **DEV_USERNAME**: The user for SSH connections, e.g., `root`.
 - **DEV_SSH_PRIVATE_KEY**: The content of your SSH private key.
+- **PROD_HOST**: The IP address of your production server.
+- **PROD_USERNAME**: The user for SSH connections to the production server.
+- **PROD_SSH_PRIVATE_KEY**: The content of your SSH private key for the production server.
 
 ### Steps to Create GitHub Secrets:
 1. Navigate to your repository settings.
 2. Go to "Secrets and Variables" > "Actions".
 3. Click "New repository secret".
 4. Add each of the secrets listed above.
-5. 
+
 ## Workflow Explanation
 
 This workflow is designed to support both development and production environments through automation. It is structured to build Docker images from your source code, push these images to DockerHub, and deploy them to your VPS via SSH. The workflow is triggered by specific GitHub events, configured to differentiate between development and production deployments.
