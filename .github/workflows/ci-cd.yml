@@ -35,4 +35,32 @@ jobs:
           context: .
           file: ${{ matrix.dockerfile }}
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/helixauth-${{ matrix.component }}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/helixauth-${{ matrix.component }}:${{ github.sha }}
+
+  deploy_dev:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to Development Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEV_HOST }}
+          username: ${{ secrets.DEV_USERNAME }}
+          key: ${{ secrets.DEV_SSH_PRIVATE_KEY }}
+          script: |
+            # Set environment variables for the Docker image tags
+            BACKEND_TAG=${{ github.sha }}
+            FRONTEND_TAG=${{ github.sha }}
+
+            # Export these variables to be used by docker-compose
+            export BACKEND_TAG
+            export FRONTEND_TAG
+            
+            # Restart the applications using Docker Compose
+            # Assuming docker-compose.yml uses environment variables for image tags
+            docker-compose down
+            docker-compose up --build -d
