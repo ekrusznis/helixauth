@@ -1,13 +1,34 @@
 # Build Stage
+# Use a specific version of Node.js based on the node image
 FROM node:16 AS build
+
+# Set the working directory in the container
 WORKDIR /app
+
+# Copy package.json and package-lock.json (if available) to the container
+# This step is done separately to take advantage of Docker's layer caching,
+# speeding up builds when dependencies have not changed
 COPY frontend/package.json frontend/package-lock.json* ./
+
+# Install dependencies using yarn
+# Note: Make sure that yarn is preferred over npm in your project
 RUN yarn install
+
+# Copy the rest of the frontend code into the container
 COPY frontend/ .
+
+# Build the application
 RUN yarn build
 
 # Serve Stage
+# Use a stable version of Nginx as the base image for the serving stage
 FROM nginx:stable
+
+# Copy the built static files from the build stage to the Nginx container
 COPY --from=build /app/build /usr/share/nginx/html
+
+# Expose port 80 to allow communication to/from the server
 EXPOSE 80
+
+# Start Nginx when the container starts
 CMD ["nginx", "-g", "daemon off;"]
