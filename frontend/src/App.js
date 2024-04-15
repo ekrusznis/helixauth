@@ -44,7 +44,7 @@ function App() {
         <Route path='/faq' element={<Faq />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
-        <Route path='/dashboard' element={<Dashboard />}></Route>
+        <Route path='/dashboard' element={<APISecurity />}></Route>
         <Route path='/apisecurity' element={<APISecurity />}></Route>
         <Route path='/help' element={<Help />}></Route>
         <Route path='/settings' element={<Settings />}></Route>

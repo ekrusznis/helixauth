@@ -1,0 +1,68 @@
+.api-table-container {
+    overflow-x: auto; /* Ensure table is scrollable on smaller screens */
+  }
+  
+  .api-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #252c3a;
+    color: white;
+    margin-top: 20px; /* Adjust spacing as needed */
+  }
+  
+  .api-table th,
+  .api-table td {
+    text-align: left;
+    padding: 12px 15px;
+  }
+  
+  .api-table th {
+    background-color: #1e242f;
+  }
+  
+  .api-table tr:nth-child(even) {
+    background-color: #2a3348;
+  }
+  
+  .api-table tr:hover {
+    background-color: #1e242f;
+  }
+  
+  .security-critical {
+    color: #e74a3b;
+  }
+  
+  .security-high {
+    color: #f6c23e;
+  }
+  
+  .security-medium {
+    color: #f8f9fc;
+  }
+  
+  .security-low {
+    color: #4e73df;
+  }
+  
+  /* Additional styling for other elements... */
+  
+  /* Style for 'New' label */
+  .api-table td :is(.new-label) {
+    background-color: #1cc88a; /* Color for new items */
+    border-radius: 10px;
+    padding: 3px 6px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Style for 'Labels' */
+  .api-table td :is(.label-no-auth) {
+    background-color: #e74a3b; /* Color for no authentication label */
+    border-radius: 10px;
+    padding: 3px 6px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Add responsive styles if necessary */
+  
