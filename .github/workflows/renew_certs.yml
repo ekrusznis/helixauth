@@ -13,7 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
-      - name: 
       - name: Run the scipt
         working-directory: ${{env.working-directory}}
         run: |          
