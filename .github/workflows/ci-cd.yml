@@ -45,6 +45,15 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
+      - name: Copy files to VPS
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.DEV_HOST }}
+          username: ${{ secrets.DEV_USERNAME }}
+          key: ${{ secrets.DEV_SSH_PRIVATE_KEY }}
+          source: "./docker-compose.yml"
+          target: "/var/www/dev.helixauth.com/docker-compose.yml"
+
       - name: Deploy to Development Server
         uses: appleboy/ssh-action@master
         with:
@@ -59,8 +68,9 @@ jobs:
             # Export these variables to be used by docker-compose
             export BACKEND_TAG
             export FRONTEND_TAG
-            
+
             # Restart the applications using Docker Compose
             # Assuming docker-compose.yml uses environment variables for image tags
+            cd /var/www/dev.helixauth.com
             docker-compose down
             docker-compose up --build -d
