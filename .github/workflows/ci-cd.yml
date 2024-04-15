@@ -7,35 +7,35 @@ on:
       - dev
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-          matrix:
-            include:
-              - component: backend
-                dockerfile: docker/Dockerfile-backend
-              - component: frontend
-                dockerfile: docker/Dockerfile-frontend
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v2
+  # build:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #         matrix:
+  #           include:
+  #             - component: backend
+  #               dockerfile: docker/Dockerfile-backend
+  #             - component: frontend
+  #               dockerfile: docker/Dockerfile-frontend
+  #   steps:
+  #     - name: Checkout the repository
+  #       uses: actions/checkout@v2
       
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+  #     - name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v1
 
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+  #     - name: Log in to Docker Hub
+  #       uses: docker/login-action@v1
+  #       with:
+  #         username: ${{ secrets.DOCKERHUB_USERNAME }}
+  #         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ${{ matrix.dockerfile }}
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/helixauth-${{ matrix.component }}:${{ github.sha }}
+  #     - name: Build and push Docker image
+  #       uses: docker/build-push-action@v2
+  #       with:
+  #         context: .
+  #         file: ${{ matrix.dockerfile }}
+  #         push: true
+  #         tags: ${{ secrets.DOCKERHUB_USERNAME }}/helixauth-${{ matrix.component }}:${{ github.sha }}
 
   deploy_dev:
     needs: build
@@ -61,13 +61,13 @@ jobs:
           username: ${{ secrets.DEV_USERNAME }}
           key: ${{ secrets.DEV_SSH_PRIVATE_KEY }}
           script: |
-            # Set environment variables for the Docker image tags
-            BACKEND_TAG=${{ github.sha }}
-            FRONTEND_TAG=${{ github.sha }}
+            # # Set environment variables for the Docker image tags
+            # BACKEND_TAG=${{ github.sha }}
+            # FRONTEND_TAG=${{ github.sha }}
 
-            # Export these variables to be used by docker-compose
-            export BACKEND_TAG
-            export FRONTEND_TAG
+            # # Export these variables to be used by docker-compose
+            # export BACKEND_TAG
+            # export FRONTEND_TAG
 
             # Restart the applications using Docker Compose
             # Assuming docker-compose.yml uses environment variables for image tags
