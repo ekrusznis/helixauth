@@ -7,7 +7,6 @@ import com.ha.helixauth.api.user.model.dto.UserDto
 object UserMapper {
     fun toDTO(user: User): UserDto = UserDto(
         id = user.id,
-        username = user.username,
         email = user.email,
         password = user.password,
         firstName = user.firstName,
@@ -19,12 +18,12 @@ object UserMapper {
     )
 
     fun toEntity(userDto: UserDto, company: Company): User = User(
-        username = userDto.username,
+        username = userDto.email,
         email = userDto.email,
         password = userDto.password,
         firstName = userDto.firstName,
         lastName = userDto.lastName,
-        avatar = userDto.avatar,
+        avatar = userDto.avatar ?: "",
         company = company,
         sessionToken = userDto.sessionToken,
         sessionTokenExpiry = userDto.sessionTokenExpiry

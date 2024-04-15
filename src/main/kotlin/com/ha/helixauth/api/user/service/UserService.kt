@@ -21,7 +21,7 @@ class UserService(
 
     fun registerUser(userDTO: UserDto, companyId: Long): User {
         val company = companyRepository.findById(companyId).get()
-        val userInfo = "User: ${userDTO.username}, Name: ${userDTO.firstName} ${userDTO.lastName}"
+        val userInfo = "Email: ${userDTO.email}, Name: ${userDTO.firstName} ${userDTO.lastName}"
 
         company.blockchain.addTransactionToBlockchain(userInfo)
 
@@ -29,18 +29,19 @@ class UserService(
     }
 
     fun updateUser(userId: Long, userDTO: UserDto): User {
-        val user = userRepository.findById(userId).orElseThrow { RuntimeException("User not found") }
+        val user = userRepository.findById(userId).orElseThrow {
+            RuntimeException("User not found") }
 
         val hashedPassword = passwordEncoder.encode(userDTO.password)
 
         // Update user details
         user.apply {
-            username = userDTO.username
+            username = userDTO.email
             password = hashedPassword // Ensure password is encrypted
             email = userDTO.email
             firstName = userDTO.firstName
             lastName = userDTO.lastName
-            avatar = userDTO.avatar
+            avatar = userDTO.avatar ?: ""
         }
 
         // Record the update in the blockchain
