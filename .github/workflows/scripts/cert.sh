@@ -1,5 +1,13 @@
 #!/bin/bash
 
+echo "Install dependencies"
+sudo apt install -y certbot openssl python3-certbot-dns-digitalocean
+
+echo "Creates the DO Credentials"
+touch ~/certbot-creds.ini
+chmod go-rwx ~/certbot-creds.ini
+echo "dns_digitalocean_token = $DO_TOKEN"
+
 # Get the current date in seconds since the epoch
 current_date=$(date +%s)
 
