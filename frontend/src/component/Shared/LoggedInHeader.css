@@ -4,8 +4,7 @@
     justify-content: space-between;
     align-items: center;
     height: 50px;
-    background-color: #374563; /* Set background color */
-    border-bottom: 1px solid #ccc; /* Add bottom border */
+    background-color: #233043; /* Set background color */
     padding: 0 10px; /* Add padding to create space between elements */
   }
   
@@ -18,27 +17,36 @@
   .right-content {
     display: flex;
     align-items: center;
+    width: 20%;
+    justify-content: space-around; 
   }
   
   .profile-circle {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: aquamarine;
+    background-color: rgb(72, 164, 240);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 5px;
+    font-weight: 500;
+    font-size: 13px;
   }
 
   .account-button {
     background-color: #3b5ca3;
     border: none;
-    font-size: 14px;
+    font-size: 13px;
     color: lightgray;
   }
 
   .bell, .help {
     background: none;
     border: none;
+    font-size: 13px;
+  }
+
+  .help {
+    margin-right: -5px;
   }

@@ -22,17 +22,7 @@
   .sidebar.collapsed {
     display: none;
   }
-  
-  .sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 15%; /* Set sidebar width */
-    background-color: #343a40; /* Dark background color */
-    padding: 20px;
-    transition: width 0.3s ease; /* Smooth transition for width change */
-    overflow-y: hidden;
-  }
+
   
   .page-content-wrapper {
     margin-left: 15%; /* Adjust to accommodate sidebar */
