@@ -72,3 +72,39 @@ This workflow is designed to support both development and production environment
 - **Quick Rollback**: Easy rollback to previous versions if a new release introduces bugs, by redeploying the previous tag.
 
 This CI/CD setup not only enhances operational efficiency but also maintains high standards of reliability and stability in software deployment processes.
+
+
+## How to Deploy to Production
+
+Deploying to production is a crucial phase that typically requires careful handling to ensure reliability and stability. In our project, production deployments are triggered by creating a new release tag in GitHub. This method allows for a controlled and clear approach to managing releases.
+
+### Steps to Create a Release in GitHub
+
+1. **Go to the Repository:**
+   - Navigate to your GitHub repository where the project is hosted.
+
+2. **Releases Section:**
+   - Click on the "Releases" section found on the repository's main page, usually accessible from the menu below the repository name or from the right sidebar.
+
+3. **Draft a New Release:**
+   - Click on "Draft a new release" or "Create a new release" button, which is typically found at the top right of the Releases section.
+
+4. **Tag Version:**
+   - Specify the tag version for your release in the "Tag version" box. It's common practice to use semantic versioning, e.g., `v1.0.0`.
+
+5. **Release Title:**
+   - Provide a title for your release in the "Release title" field. This title should succinctly describe the release or the version.
+
+6. **Description:**
+   - Add a detailed description of the release in the "Describe this release" text area. Include key changes, enhancements, and any important notes about the deployment. This information is crucial for documentation and helps the team understand what's included in the release.
+
+7. **Publish the Release:**
+   - After filling out the tag, title, and description, you can choose to either "Publish release" immediately or "Save draft" to continue editing later. Clicking "Publish release" will create a tag in your repository, which triggers the GitHub Actions workflow designated for production deployment.
+
+### Example of Creating a Release:
+```markdown
+- **Tag version:** v2.1.0
+- **Release title:** Feature Release - Improved Authentication
+- **Description:** This release introduces a revamped authentication system, improving security and performance. Major enhancements include 2FA support, updated encryption protocols, and performance optimizations in session management.
+```
+
