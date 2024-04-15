@@ -1,9 +1,12 @@
 name: Renew Certs
 
+# Controls when the workflow will run
 on:
-  push:
-    branches:
-      - master
+  # Triggers the workflow on a timer. This particular timer runs on the first day of the month. CertBot certs are renewable every 30 days, so this should work for that purpose.
+  schedule:
+    - cron:  '0 5 */31 * *'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
