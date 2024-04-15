@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      VERSION: ${{ steps.docker_tag.outputs.tag }}
     strategy:
           matrix:
             include:
@@ -70,8 +72,8 @@ jobs:
           key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
           script: |
             # Set environment variables for the Docker image tags
-            BACKEND_TAG=${{ steps.docker_tag.outputs.tag }}
-            FRONTEND_TAG=${{ steps.docker_tag.outputs.tag }}
+            BACKEND_TAG=${{ needs.build.outputs.VERSION }}
+            FRONTEND_TAG=${{ needs.build.outputs.VERSION }}
 
             # Set the Docker image names
             BACKEND_IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/helixauth-backend:${BACKEND_TAG}
