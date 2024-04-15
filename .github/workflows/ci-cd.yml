@@ -71,5 +71,5 @@ jobs:
             # Restart the applications using Docker Compose
             # Assuming docker-compose.yml uses environment variables for image tags
             cd /var/www/dev.helixauth.com
-            docker-compose down
-            docker-compose up --build -d
+            docker compose down
+            docker compose up --build -d
