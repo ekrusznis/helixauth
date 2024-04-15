@@ -1,25 +1,25 @@
-2024-04-15 15:24:03,761:DEBUG:certbot._internal.main:certbot version: 2.10.0
-2024-04-15 15:24:03,762:DEBUG:certbot._internal.main:Location of certbot entry point: /opt/homebrew/bin/certbot
-2024-04-15 15:24:03,762:DEBUG:certbot._internal.main:Arguments: ['-d', 'helixauth.com', '-d', 'dev.helixauth.com', '--manual', '--config-dir', './config', '--work-dir', './work', '--logs-dir', './logs', '-m', 'ekrusznis@gmail.com', '--agree-tos', '--preferred-challenges', 'dns']
-2024-04-15 15:24:03,762:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#nginx,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
-2024-04-15 15:24:03,780:DEBUG:certbot._internal.log:Root logging level set at 30
-2024-04-15 15:24:03,781:DEBUG:certbot._internal.plugins.selection:Requested authenticator manual and installer None
-2024-04-15 15:24:03,781:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * manual
+2024-04-15 15:25:11,595:DEBUG:certbot._internal.main:certbot version: 2.10.0
+2024-04-15 15:25:11,596:DEBUG:certbot._internal.main:Location of certbot entry point: /opt/homebrew/bin/certbot
+2024-04-15 15:25:11,596:DEBUG:certbot._internal.main:Arguments: ['-d', 'helixauth.com', '-d', '*.helixauth.com', '--manual', '--config-dir', './config', '--work-dir', './work', '--logs-dir', './logs', '-m', 'ekrusznis@gmail.com', '--agree-tos', '--preferred-challenges', 'dns']
+2024-04-15 15:25:11,596:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#nginx,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2024-04-15 15:25:11,611:DEBUG:certbot._internal.log:Root logging level set at 30
+2024-04-15 15:25:11,612:DEBUG:certbot._internal.plugins.selection:Requested authenticator manual and installer None
+2024-04-15 15:25:11,612:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * manual
 Description: Manual configuration or run your own shell scripts
 Interfaces: Authenticator, Plugin
 Entry point: EntryPoint(name='manual', value='certbot._internal.plugins.manual:Authenticator', group='certbot.plugins')
-Initialized: <certbot._internal.plugins.manual.Authenticator object at 0x1045915b0>
+Initialized: <certbot._internal.plugins.manual.Authenticator object at 0x102ffc650>
 Prep: True
-2024-04-15 15:24:03,781:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot._internal.plugins.manual.Authenticator object at 0x1045915b0> and installer None
-2024-04-15 15:24:03,781:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator manual, Installer None
-2024-04-15 15:24:03,832:DEBUG:certbot._internal.main:Picked account: <Account(RegistrationResource(body=Registration(key=None, contact=(), agreement=None, status=None, terms_of_service_agreed=None, only_return_existing=None, external_account_binding=None), uri='https://acme-v02.api.letsencrypt.org/acme/acct/1673050987', new_authzr_uri=None, terms_of_service=None), 3ba539656fa959312c9b68c65983547c, Meta(creation_dt=datetime.datetime(2024, 4, 15, 13, 10, 55, tzinfo=<UTC>), creation_host='31.0.168.192.in-addr.arpa', register_to_eff='ekrusznis@gmail.com'))>
-2024-04-15 15:24:03,841:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
-2024-04-15 15:24:03,851:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
-2024-04-15 15:24:04,483:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "GET /directory HTTP/1.1" 200 747
-2024-04-15 15:24:04,483:DEBUG:acme.client:Received response:
+2024-04-15 15:25:11,612:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot._internal.plugins.manual.Authenticator object at 0x102ffc650> and installer None
+2024-04-15 15:25:11,612:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator manual, Installer None
+2024-04-15 15:25:11,655:DEBUG:certbot._internal.main:Picked account: <Account(RegistrationResource(body=Registration(key=None, contact=(), agreement=None, status=None, terms_of_service_agreed=None, only_return_existing=None, external_account_binding=None), uri='https://acme-v02.api.letsencrypt.org/acme/acct/1673050987', new_authzr_uri=None, terms_of_service=None), 3ba539656fa959312c9b68c65983547c, Meta(creation_dt=datetime.datetime(2024, 4, 15, 13, 10, 55, tzinfo=<UTC>), creation_host='31.0.168.192.in-addr.arpa', register_to_eff='ekrusznis@gmail.com'))>
+2024-04-15 15:25:11,665:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2024-04-15 15:25:11,679:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
+2024-04-15 15:25:12,622:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "GET /directory HTTP/1.1" 200 747
+2024-04-15 15:25:12,622:DEBUG:acme.client:Received response:
 HTTP 200
 Server: nginx
-Date: Mon, 15 Apr 2024 13:24:04 GMT
+Date: Mon, 15 Apr 2024 13:25:12 GMT
 Content-Type: application/json
 Content-Length: 747
 Connection: keep-alive
@@ -28,7 +28,7 @@ X-Frame-Options: DENY
 Strict-Transport-Security: max-age=604800
 
 {
-  "anlpoYMtF4Q": "https://community.letsencrypt.org/t/adding-random-entries-to-the-directory/33417",
+  "fWOS5XuqJmM": "https://community.letsencrypt.org/t/adding-random-entries-to-the-directory/33417",
   "keyChange": "https://acme-v02.api.letsencrypt.org/acme/key-change",
   "meta": {
     "caaIdentities": [
@@ -43,44 +43,44 @@ Strict-Transport-Security: max-age=604800
   "renewalInfo": "https://acme-v02.api.letsencrypt.org/draft-ietf-acme-ari-02/renewalInfo/",
   "revokeCert": "https://acme-v02.api.letsencrypt.org/acme/revoke-cert"
 }
-2024-04-15 15:24:04,483:DEBUG:certbot._internal.display.obj:Notifying user: Requesting a certificate for helixauth.com and dev.helixauth.com
-2024-04-15 15:24:04,487:DEBUG:acme.client:Requesting fresh nonce
-2024-04-15 15:24:04,487:DEBUG:acme.client:Sending HEAD request to https://acme-v02.api.letsencrypt.org/acme/new-nonce.
-2024-04-15 15:24:04,799:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "HEAD /acme/new-nonce HTTP/1.1" 200 0
-2024-04-15 15:24:04,800:DEBUG:acme.client:Received response:
+2024-04-15 15:25:12,623:DEBUG:certbot._internal.display.obj:Notifying user: Requesting a certificate for helixauth.com and *.helixauth.com
+2024-04-15 15:25:12,630:DEBUG:acme.client:Requesting fresh nonce
+2024-04-15 15:25:12,630:DEBUG:acme.client:Sending HEAD request to https://acme-v02.api.letsencrypt.org/acme/new-nonce.
+2024-04-15 15:25:12,820:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "HEAD /acme/new-nonce HTTP/1.1" 200 0
+2024-04-15 15:25:12,820:DEBUG:acme.client:Received response:
 HTTP 200
 Server: nginx
-Date: Mon, 15 Apr 2024 13:24:04 GMT
+Date: Mon, 15 Apr 2024 13:25:12 GMT
 Connection: keep-alive
 Cache-Control: public, max-age=0, no-cache
 Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
-Replay-Nonce: 41Xn7EjcZ-cv2u45dVowvvYKzNnZAXKOJKK-eNRMUBneSd4KrlU
+Replay-Nonce: V_63_Dn5qXaiiv-_-GsNfc1yZxuKXi_eJPnM90dOeZeMf3M4RRw
 X-Frame-Options: DENY
 Strict-Transport-Security: max-age=604800
 
 
-2024-04-15 15:24:04,800:DEBUG:acme.client:Storing nonce: 41Xn7EjcZ-cv2u45dVowvvYKzNnZAXKOJKK-eNRMUBneSd4KrlU
-2024-04-15 15:24:04,800:DEBUG:acme.client:JWS payload:
-b'{\n  "identifiers": [\n    {\n      "type": "dns",\n      "value": "helixauth.com"\n    },\n    {\n      "type": "dns",\n      "value": "dev.helixauth.com"\n    }\n  ]\n}'
-2024-04-15 15:24:04,805:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/new-order:
+2024-04-15 15:25:12,820:DEBUG:acme.client:Storing nonce: V_63_Dn5qXaiiv-_-GsNfc1yZxuKXi_eJPnM90dOeZeMf3M4RRw
+2024-04-15 15:25:12,820:DEBUG:acme.client:JWS payload:
+b'{\n  "identifiers": [\n    {\n      "type": "dns",\n      "value": "helixauth.com"\n    },\n    {\n      "type": "dns",\n      "value": "*.helixauth.com"\n    }\n  ]\n}'
+2024-04-15 15:25:12,822:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/new-order:
 {
-  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICI0MVhuN0VqY1otY3YydTQ1ZFZvd3Z2WUt6Tm5aQVhLT0pLSy1lTlJNVUJuZVNkNEtybFUiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL25ldy1vcmRlciJ9",
-  "signature": "JAGM2PR1VpgKDiuC4ROeoTPM0jmm0fDpRANik3RrxCFhXEsBxh_DdpMs2RaeqW78_SanJ8xkmrNiJCJKxMMnncuJCD0PhTpz1xjVGD3nV0l4U2OZeqGPc-AFa_O8M_0FSs3jrDN2GdA1UHy3eCpDHUZHjugYqkfUPkxobgdZ6XZumrWBM9HMnPm8LeUzT4q1kKwy84E1sSaInacfdKYfFksAQW3lrLKx36B8H_cdpxRp7QntzDGxvMmkN1nHNtLUMppqD9X6wRuYf3N17beYQMP-08iQPC-vjl9JYTX7iAHrpuyELGOe8gAL_AwbFrY9eG82c5SCsgjcupC7PIxqpg",
-  "payload": "ewogICJpZGVudGlmaWVycyI6IFsKICAgIHsKICAgICAgInR5cGUiOiAiZG5zIiwKICAgICAgInZhbHVlIjogImhlbGl4YXV0aC5jb20iCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJkbnMiLAogICAgICAidmFsdWUiOiAiZGV2LmhlbGl4YXV0aC5jb20iCiAgICB9CiAgXQp9"
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICJWXzYzX0RuNXFYYWlpdi1fLUdzTmZjMXlaeHVLWGlfZUpQbk05MGRPZVplTWYzTTRSUnciLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL25ldy1vcmRlciJ9",
+  "signature": "wR2nXTnY6N-9M4M5gEPfTgL8eeywc4MB_AkMxHYZeT4r2zFrNlWcxvn6jAfu9YlNtu180CaWB8TVPy4kvtWXwx4VT053HPNNjw5Km_26Y-X_2hHGqATFgMgNjIdQPC9rGQr58FU1AWc4O2vhqJ-9DjkZoWRcGHBui6ZYm16oJvVhbc_UNzIpjr7ttHzyRQ2nF4HsLvDHfZPkykOfw-AAiQEmn_XOo9KZGBke25pCmilXrpYue05x940Coxom0htSUO13DvnwNfGNDsoBXsuz7ZafOX6x0xKBcl8nghGkAIUqk2Cub-OwGSfuBMIQeC8rNI3s-ZZKKZLjhzB9vM5mdg",
+  "payload": "ewogICJpZGVudGlmaWVycyI6IFsKICAgIHsKICAgICAgInR5cGUiOiAiZG5zIiwKICAgICAgInZhbHVlIjogImhlbGl4YXV0aC5jb20iCiAgICB9LAogICAgewogICAgICAidHlwZSI6ICJkbnMiLAogICAgICAidmFsdWUiOiAiKi5oZWxpeGF1dGguY29tIgogICAgfQogIF0KfQ"
 }
-2024-04-15 15:24:05,052:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/new-order HTTP/1.1" 201 479
-2024-04-15 15:24:05,052:DEBUG:acme.client:Received response:
+2024-04-15 15:25:13,167:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/new-order HTTP/1.1" 201 477
+2024-04-15 15:25:13,168:DEBUG:acme.client:Received response:
 HTTP 201
 Server: nginx
-Date: Mon, 15 Apr 2024 13:24:05 GMT
+Date: Mon, 15 Apr 2024 13:25:13 GMT
 Content-Type: application/json
-Content-Length: 479
+Content-Length: 477
 Connection: keep-alive
 Boulder-Requester: 1673050987
 Cache-Control: public, max-age=0, no-cache
 Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
-Location: https://acme-v02.api.letsencrypt.org/acme/order/1673050987/261157389127
-Replay-Nonce: fYM0lmBiUAWKJC3uI_yWNmtsepPInfcT26ZxbXN3vx3maRHvi8w
+Location: https://acme-v02.api.letsencrypt.org/acme/order/1673050987/261157607607
+Replay-Nonce: V_63_Dn52qxrrZDbKicxUcQzMv4SOV0wo__uf4gYvftle85R5FE
 X-Frame-Options: DENY
 Strict-Transport-Security: max-age=604800
 
@@ -90,7 +90,7 @@ Strict-Transport-Security: max-age=604800
   "identifiers": [
     {
       "type": "dns",
-      "value": "dev.helixauth.com"
+      "value": "*.helixauth.com"
     },
     {
       "type": "dns",
@@ -98,84 +98,32 @@ Strict-Transport-Security: max-age=604800
     }
   ],
   "authorizations": [
-    "https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229677",
-    "https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229687"
+    "https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229687",
+    "https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797530607"
   ],
-  "finalize": "https://acme-v02.api.letsencrypt.org/acme/finalize/1673050987/261157389127"
+  "finalize": "https://acme-v02.api.letsencrypt.org/acme/finalize/1673050987/261157607607"
 }
-2024-04-15 15:24:05,053:DEBUG:acme.client:Storing nonce: fYM0lmBiUAWKJC3uI_yWNmtsepPInfcT26ZxbXN3vx3maRHvi8w
-2024-04-15 15:24:05,053:DEBUG:acme.client:JWS payload:
+2024-04-15 15:25:13,168:DEBUG:acme.client:Storing nonce: V_63_Dn52qxrrZDbKicxUcQzMv4SOV0wo__uf4gYvftle85R5FE
+2024-04-15 15:25:13,168:DEBUG:acme.client:JWS payload:
 b''
-2024-04-15 15:24:05,054:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229677:
+2024-04-15 15:25:13,170:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229687:
 {
-  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICJmWU0wbG1CaVVBV0tKQzN1SV95V05tdHNlcFBJbmZjVDI2WnhiWE4zdngzbWFSSHZpOHciLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzMzODc5NzIyOTY3NyJ9",
-  "signature": "hMp0nIdjMeBJP4rpBuhJPI2S_vvfGX5_mynI5W8RYj00QOvCG08VOQFtyK0L8HbDs_PT5PJzseqEM2ghXa2Mt8qtkP7-qYMDpaXNlNaHyeEYZAEVU-w0KTciiwx2XE2Dfu9DOlw3G7cQpfiUVzNDGLaw2IP7_6iN58LBINvlFK7PVPRs7zfIktToV8oHItrZRmeSG-Z0UDm-hdleUl-Ybxvf17Yprm3kJvDcenyUe3E73VaCXRyaZiN-QcSmnPIjjTTyhECqD8-AbM10tnwnx532qBErgkBKl_EF8YSvvcTDtlYBl6TYy-ph621nvIWg8TUnYZTPeJRNf_RZWSDdkg",
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICJWXzYzX0RuNTJxeHJyWkRiS2ljeFVjUXpNdjRTT1Ywd29fX3VmNGdZdmZ0bGU4NVI1RkUiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzMzODc5NzIyOTY4NyJ9",
+  "signature": "joTAQ1kwOLZ4jNSZRYelWesCkJ6JzNsNeAX21mRV00EvKbrTKjgEXXvCkI4_Y7Q95gnWra404T74ztqUaXppm7r64Y5t8vH3ZmReaJ1WtDZfcso8LVkHuObNCeJxOvqP4lRox1f7uQ4HJRRInHih5J637k6gbIJzeIvQu0Upp1kxFQVqsLHe9VFfTJ19xn9jM5SJLp6gvNVTHRTyzrSlfOAFLg_aekh2cfFU_gXVGg2N83UlkRgyxeVgTKLFF5BmMJLVN4HV397ZiBkdV9I2k_npXP-65ZX-GCLA4rrRJx82alaNa4pyiSVfTPWTJ88ySH2Jyjsap2qBK8wrCUBPNA",
   "payload": ""
 }
-2024-04-15 15:24:05,323:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/338797229677 HTTP/1.1" 200 801
-2024-04-15 15:24:05,324:DEBUG:acme.client:Received response:
+2024-04-15 15:25:13,354:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/338797229687 HTTP/1.1" 200 797
+2024-04-15 15:25:13,355:DEBUG:acme.client:Received response:
 HTTP 200
 Server: nginx
-Date: Mon, 15 Apr 2024 13:24:05 GMT
-Content-Type: application/json
-Content-Length: 801
-Connection: keep-alive
-Boulder-Requester: 1673050987
-Cache-Control: public, max-age=0, no-cache
-Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
-Replay-Nonce: 41Xn7Ejc5q0c0GIw4UQi8GB5Ii9XDJZY2E7tY82-f1tmWGfX6-A
-X-Frame-Options: DENY
-Strict-Transport-Security: max-age=604800
-
-{
-  "identifier": {
-    "type": "dns",
-    "value": "dev.helixauth.com"
-  },
-  "status": "pending",
-  "expires": "2024-04-22T13:24:05Z",
-  "challenges": [
-    {
-      "type": "http-01",
-      "status": "pending",
-      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/CdN9qw",
-      "token": "G3yDNOUSaNW5uKcBeHB0bgRqJT_G8Ar4edqRXCNvKf4"
-    },
-    {
-      "type": "dns-01",
-      "status": "pending",
-      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/gSkAqQ",
-      "token": "G3yDNOUSaNW5uKcBeHB0bgRqJT_G8Ar4edqRXCNvKf4"
-    },
-    {
-      "type": "tls-alpn-01",
-      "status": "pending",
-      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797229677/6SR4WA",
-      "token": "G3yDNOUSaNW5uKcBeHB0bgRqJT_G8Ar4edqRXCNvKf4"
-    }
-  ]
-}
-2024-04-15 15:24:05,324:DEBUG:acme.client:Storing nonce: 41Xn7Ejc5q0c0GIw4UQi8GB5Ii9XDJZY2E7tY82-f1tmWGfX6-A
-2024-04-15 15:24:05,325:DEBUG:acme.client:JWS payload:
-b''
-2024-04-15 15:24:05,328:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797229687:
-{
-  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICI0MVhuN0VqYzVxMGMwR0l3NFVRaThHQjVJaTlYREpaWTJFN3RZODItZjF0bVdHZlg2LUEiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzMzODc5NzIyOTY4NyJ9",
-  "signature": "fP_CqPCD7QobnihBqIWuwlYcM8etXyjuRdO4T0DIf3T0ABQkDLbql997dpdrXJ2rhrn8re1xglSn_wpHvet4BDbZXIl117pXBqk6w4n9eFe0JX7tPEk3Nj_ljmmrYtjdv9hQ431B3aMVnZ87pu3id5DifjYvqzpyFL7-TT7PCYqTNqxz7xvYiaMutbM3EnR-MAuCYew0tXQNFJjZyqg-O0VDV4fG7Jsh2UH0ne23faE3yAVx9sLO_OAcIIQc7YibwTYmOC0nOESrK_W2SYAdir-Z3BL9jM_DmNt3p881AAhOXmGyRDLd9Zk7Ee2L-vhg6zfiEySVlwR4KlU_Ed6ayQ",
-  "payload": ""
-}
-2024-04-15 15:24:05,541:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/338797229687 HTTP/1.1" 200 797
-2024-04-15 15:24:05,542:DEBUG:acme.client:Received response:
-HTTP 200
-Server: nginx
-Date: Mon, 15 Apr 2024 13:24:05 GMT
+Date: Mon, 15 Apr 2024 13:25:13 GMT
 Content-Type: application/json
 Content-Length: 797
 Connection: keep-alive
 Boulder-Requester: 1673050987
 Cache-Control: public, max-age=0, no-cache
 Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
-Replay-Nonce: 41Xn7EjcBWroBJPzgYMdM0SQeHBFpTRS-kcWkgYx1v5ZwjkvTVw
+Replay-Nonce: V_63_Dn5VyNjVauzeeS0OGxV5yJhfJ5lJ_xat1sRQ-zWPHI933Q
 X-Frame-Options: DENY
 Strict-Transport-Security: max-age=604800
 
@@ -207,19 +155,80 @@ Strict-Transport-Security: max-age=604800
     }
   ]
 }
-2024-04-15 15:24:05,542:DEBUG:acme.client:Storing nonce: 41Xn7EjcBWroBJPzgYMdM0SQeHBFpTRS-kcWkgYx1v5ZwjkvTVw
-2024-04-15 15:24:05,542:INFO:certbot._internal.auth_handler:Performing the following challenges:
-2024-04-15 15:24:05,543:INFO:certbot._internal.auth_handler:dns-01 challenge for dev.helixauth.com
-2024-04-15 15:24:05,543:INFO:certbot._internal.auth_handler:dns-01 challenge for helixauth.com
-2024-04-15 15:24:05,546:DEBUG:certbot._internal.display.obj:Notifying user: Please deploy a DNS TXT record under the name:
+2024-04-15 15:25:13,355:DEBUG:acme.client:Storing nonce: V_63_Dn5VyNjVauzeeS0OGxV5yJhfJ5lJ_xat1sRQ-zWPHI933Q
+2024-04-15 15:25:13,355:DEBUG:acme.client:JWS payload:
+b''
+2024-04-15 15:25:13,357:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/338797530607:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTY3MzA1MDk4NyIsICJub25jZSI6ICJWXzYzX0RuNVZ5TmpWYXV6ZWVTME9HeFY1eUpoZko1bEpfeGF0MXNSUS16V1BISTkzM1EiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzMzODc5NzUzMDYwNyJ9",
+  "signature": "66Uy3-oiR5iBk5uoHHIybE0kwYbZUuAK_Fq4524_JPu5yNd8kYpPwzpqpIurohwrYpVuGL-kCLN45_-k7r5rPqH4yrS1VuWy1zhcZm3Zus9o05Es-wQcN1TZsZDBrWYhzlDPfSiT9KDdcLn7efClcqHamMtsaivStK6oXk_Jz9JnnW05_6TZ3wko1rf2Pu9B828tYlcoQeRjX16zTkd1V6jqrzRZYqJYRc-AcnZZMkN0450IF-UAN4B7biBGi4iS5spNFk5Ykgsn7zxNrmYxyKY794CYk4iFUIdU_X1BIxB1fLjZb3SX-pd_oYx3zKhuQstB6uYPtL6tQ7d-F6dKnw",
+  "payload": ""
+}
+2024-04-15 15:25:13,561:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/338797530607 HTTP/1.1" 200 387
+2024-04-15 15:25:13,561:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Mon, 15 Apr 2024 13:25:13 GMT
+Content-Type: application/json
+Content-Length: 387
+Connection: keep-alive
+Boulder-Requester: 1673050987
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: V_63_Dn5zVMi-gyfWYtxMqVYMCM9IyGS-WnBC-kqOjcYZhem7tY
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
 
-_acme-challenge.dev.helixauth.com.
+{
+  "identifier": {
+    "type": "dns",
+    "value": "helixauth.com"
+  },
+  "status": "pending",
+  "expires": "2024-04-22T13:25:13Z",
+  "challenges": [
+    {
+      "type": "dns-01",
+      "status": "pending",
+      "url": "https://acme-v02.api.letsencrypt.org/acme/chall-v3/338797530607/Uof24g",
+      "token": "d5-9JcQfRRvg1Rwm1HTmpt-8NNMzy1jIYHZ9zSQn2rY"
+    }
+  ],
+  "wildcard": true
+}
+2024-04-15 15:25:13,561:DEBUG:acme.client:Storing nonce: V_63_Dn5zVMi-gyfWYtxMqVYMCM9IyGS-WnBC-kqOjcYZhem7tY
+2024-04-15 15:25:13,561:INFO:certbot._internal.auth_handler:Performing the following challenges:
+2024-04-15 15:25:13,561:INFO:certbot._internal.auth_handler:dns-01 challenge for helixauth.com
+2024-04-15 15:25:13,562:INFO:certbot._internal.auth_handler:dns-01 challenge for helixauth.com
+2024-04-15 15:25:13,563:DEBUG:certbot._internal.display.obj:Notifying user: Please deploy a DNS TXT record under the name:
+
+_acme-challenge.helixauth.com.
 
 with the following value:
 
-Ti8Pzy5GN-0NiH47RwMkgfhCjbdgqCHEAnXlgvgKPSE
+exMMprXgeWRTCV9waA29qBj2fjGc31O7VJWsSz56oNU
 
-2024-04-15 15:24:06,992:DEBUG:certbot._internal.error_handler:Encountered exception:
+2024-04-15 15:26:50,204:DEBUG:certbot._internal.display.obj:Notifying user: Please deploy a DNS TXT record under the name:
+
+_acme-challenge.helixauth.com.
+
+with the following value:
+
+4LMG5oWWCSKoJcgCDARKAQegBOC9-L8RkwUsRZbgkto
+
+(This must be set up in addition to the previous challenges; do not remove,
+replace, or undo the previous challenge tasks yet. Note that you might be
+asked to create multiple distinct TXT records with the same name. This is
+permitted by DNS standards.)
+
+Before continuing, verify the TXT record has been deployed. Depending on the DNS
+provider, this may take some time, from a few seconds to multiple minutes. You can
+check if it has finished deploying with aid of online tools, such as the Google
+Admin Toolbox: https://toolbox.googleapps.com/apps/dig/#TXT/_acme-challenge.helixauth.com.
+Look for one or more bolded line(s) below the line ';ANSWER'. It should show the
+value(s) you've just added.
+
+2024-04-15 15:29:43,502:DEBUG:certbot._internal.error_handler:Encountered exception:
 Traceback (most recent call last):
   File "/opt/homebrew/Cellar/certbot/2.10.0_1/libexec/lib/python3.12/site-packages/certbot/_internal/auth_handler.py", line 88, in handle_authorizations
     resps = self.auth.perform(achalls)
@@ -240,6 +249,6 @@ Traceback (most recent call last):
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 KeyboardInterrupt
 
-2024-04-15 15:24:06,992:DEBUG:certbot._internal.error_handler:Calling registered functions
-2024-04-15 15:24:06,992:INFO:certbot._internal.auth_handler:Cleaning up challenges
-2024-04-15 15:24:06,992:ERROR:certbot._internal.log:Exiting due to user request.
+2024-04-15 15:29:43,504:DEBUG:certbot._internal.error_handler:Calling registered functions
+2024-04-15 15:29:43,504:INFO:certbot._internal.auth_handler:Cleaning up challenges
+2024-04-15 15:29:43,505:ERROR:certbot._internal.log:Exiting due to user request.
