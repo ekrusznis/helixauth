@@ -1,39 +1,48 @@
+// LoggedInHeader.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/helix_logo_white_trans_150.png';
-import { Form, Navbar, FormControl, Button } from 'react-bootstrap'; // Assuming you're using React Bootstrap
+import { Form, Navbar, FormControl, Button, Dropdown } from 'react-bootstrap'; // Assuming you're using React Bootstrap
+import { FaQuestionCircle, FaBell } from 'react-icons/fa';
+import "./LoggedInHeader.css"
 
 const LoggedInHeader = () => {
-  const headerStyle = {
-    backgroundColor: '#1b3b57', // Primary color background
-    color: 'white', // Text color
-    display: 'flex', // Use flexbox for layout
-    justifyContent: 'space-between', // Space out the logo and the form
-    alignItems: 'center', // Center items vertically
-    padding: '0.5rem 1rem', // Add some padding around the elements
-  };
-  const formStyle = {
-    display: 'flex', // Align form elements inline
-    width: '100%', // Use full width to allow centering
-    maxWidth: '600px', // Maximum width of the form
-  };
-  const inputStyle = {
-    flexGrow: 1, // Allow the input to grow and fill the space
-    marginRight: '0.5rem', // Add some space between the input and the button
+  // Dummy function for dropdown selection
+  const handleDropdownSelect = (eventKey) => {
+    console.log("Selected:", eventKey);
   };
 
   return (
-    <Navbar style={headerStyle} expand="lg">
-       <div className="sticky-logo logo-area">
-         <Link to="/#">
-          <img src={logo} alt="logo" />
-         </Link>
-       </div>
-      <Form inline style={formStyle}>
-        <FormControl type="text" placeholder="Search" style={inputStyle} />
-        <Button variant="outline-light">Search</Button>
-      </Form>
-    </Navbar>
+    <header className="header">
+      {/* Left buttons */}
+      <div className="left-buttons">
+        <Button className="mr-2 account-button">
+          Scope: General | Accounts: All Accounts
+        </Button>
+        <Dropdown onSelect={handleDropdownSelect}>
+          <Dropdown.Toggle className='ms-2 account-button'>Last 7 days</Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item eventKey="last7days">Last 7 days</Dropdown.Item>
+            <Dropdown.Item eventKey="last30days">Last 30 days</Dropdown.Item>
+            <Dropdown.Item eventKey="custom">Custom</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+
+      {/* Right content */}
+      <div className="right-content">
+        <Button className="mr-2 help">
+          <FaQuestionCircle /> Help Center
+        </Button>
+        <Button className="mr-2 bell">
+          <FaBell />
+        </Button>
+        <div className="user-profile">
+          <div className="profile-circle">TT</div>
+        </div>
+        <span>DEMO</span>
+      </div>
+    </header>
   );
 };
 

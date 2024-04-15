@@ -1,0 +1,44 @@
+/* Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #374563; /* Set background color */
+    border-bottom: 1px solid #ccc; /* Add bottom border */
+    padding: 0 10px; /* Add padding to create space between elements */
+  }
+  
+  .left-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Add margin to create space between left and right content */
+  }
+  
+  .right-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+  }
+
+  .account-button {
+    background-color: #3b5ca3;
+    border: none;
+    font-size: 14px;
+    color: lightgray;
+  }
+
+  .bell, .help {
+    background: none;
+    border: none;
+  }
