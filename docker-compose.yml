@@ -26,4 +26,4 @@ services:
     volumes:
       - /mnt/db_volume_nyc1_01:/var/lib/postgresql/data
     ports:
-      - 5432
+      - 5432:5432
