@@ -38,7 +38,6 @@ jobs:
   #         tags: ${{ secrets.DOCKERHUB_USERNAME }}/helixauth-${{ matrix.component }}:${{ github.sha }}
 
   deploy_dev:
-    needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
