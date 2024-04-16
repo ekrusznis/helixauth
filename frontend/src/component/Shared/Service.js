@@ -25,8 +25,9 @@ const Service = () => {
                                                 fill="#EF9334"
                                             />
                                         </svg>
+
                                     </div>
-                                    <h4 className="sc-mb-0"><Link to="#">Team Collaboration</Link></h4>
+                                    <h4 className="sc-mb-0"><Link to="#">Integration Ecosystem</Link></h4>
                                 </div>
                             </div>
                         </Fade>
@@ -43,7 +44,7 @@ const Service = () => {
                                             />
                                         </svg>
                                     </div>
-                                    <h4 className="sc-mb-0"><Link to="#">Integration Ecosystem</Link></h4>
+                                    <h4 className="sc-mb-0"><Link to="#">Customizable Workflows</Link></h4>
                                 </div>
                             </div>
                         </Fade>
@@ -66,7 +67,7 @@ const Service = () => {
                                             />
                                         </svg>
                                     </div>
-                                    <h4 className="sc-mb-0"><Link to="#">Customizable Workflows</Link></h4>
+                                    <h4 className="sc-mb-0"><Link to="#">Blockchain Secured</Link></h4>
                                 </div>
                             </div>
                         </Fade>

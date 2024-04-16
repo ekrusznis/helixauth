@@ -25,10 +25,10 @@ const AboutUs = () => {
                             <div className="col-lg-6">
                                 <div className="sc-about-item sc-pl-100">
                                     <div className="sc-heading-area sc-mb-30 sc-sm-mb-15">
-                                        <h2 className="heading-title">Revolutionize Business Management</h2>
+                                        <h2 className="heading-title">Application and Data Security</h2>
                                     </div>
                                     <div className="description sc-mb-25 sc-sm-mb-15">
-                                        HelixAuth redefines business management with unparalleled security and efficiency. Our platform not only protects your data with blockchain technology but also offers comprehensive tools for managing your team, projects, and integrations, all within a customizable and user-friendly environment.
+                                        HelixAuth not only secures the gates to your digital assets but also ensures that the interactions within are monitored and protected. Our comprehensive security solutions cover every touchpoint, providing peace of mind and compliance with the latest security standards.
                                     </div>
                                     <div className="btn-area sc-mt-40">
                                         <Link className="primary-btn" to="/price#"><span>Get Started</span></Link>

@@ -71,8 +71,8 @@ const Feature = (props) => {
                                             </svg>
                                         </div>
                                         <div className="sc-feature-text">
-                                            <h4 className="feature-title"><Link to="#">Decentralized Protection</Link></h4>
-                                            <div className="description sc-mb-25"> Eliminate single points of failure with blockchain’s decentralized data distribution, ensuring robustness and reliability</div>
+                                            <h4 className="feature-title"><Link to="#">Custom Workflows</Link></h4>
+                                            <div className="description sc-mb-25"> If your business is a bit 'out of the box' then let us provide an estimate on what it would cost to make us work for you</div>
                                         </div>
                                     </div>
                                 </div>

@@ -19,9 +19,9 @@ const Banner = () => {
                         <div className="col-md-6">
                             <div className="banner-header-content">
                                 <Fade left>
-                                    <h1 className="banner-title p-z-idex white-color sc-mb-25 sc-sm-mb-15">Revolutionize Your Business with Blockchain Security</h1>
+                                    <h1 className="banner-title p-z-idex white-color sc-mb-25 sc-sm-mb-15">Secure Your API with Custom Security and Authorization</h1>
                                     <div className="banner-sub-title white-dark-color sc-mb-40 sc-sm-mb-25">
-                                        Embrace the future of business operations with HelixAuth—where advanced blockchain technology meets intuitive business management. Experience unparalleled security, seamless integrations, and the freedom to customize your workflow like never before.
+                                        HelixAuth provides robust, customizable authentication solutions designed to protect your applications and data. Our advanced security protocols ensure that your APIs and endpoints are shielded from unauthorized access, safeguarding your digital infrastructure.
                                     </div>
                                 </Fade>
                                 <div className="banner-btn-area d-flex align-items-center">
