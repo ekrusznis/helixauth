@@ -27,8 +27,8 @@ class WebSecurityConfig: WebMvcConfigurer {
 
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/api/**")
-            .allowedOrigins("http://localhost:3000") // Adjust the origin accordingly
-            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTION")
+            .allowedOrigins("http://localhost:3000", "https://138.197.113.216", "https://167.99.159.156")
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
             .allowedHeaders("*")
             .allowCredentials(true)
     }
@@ -37,7 +37,7 @@ class WebSecurityConfig: WebMvcConfigurer {
     fun passwordEncoder(): PasswordEncoder = BCryptPasswordEncoder()
 
     @Bean
-    fun filterChain(http: HttpSecurity): SecurityFilterChain {
+    fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
         http
             .cors()
             .and()
