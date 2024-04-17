@@ -1,32 +1,55 @@
 .api-table-container {
-    overflow-x: auto; /* Ensure table is scrollable on smaller screens */
-  }
-  
-  .api-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #252c3a;
-    color: white;
-    margin-top: 20px; /* Adjust spacing as needed */
-  }
-  
-  .api-table th,
-  .api-table td {
-    text-align: left;
-    padding: 12px 15px;
-  }
-  
-  .api-table th {
-    background-color: #1e242f;
-  }
-  
-  .api-table tr:nth-child(even) {
-    background-color: #2a3348;
-  }
-  
-  .api-table tr:hover {
-    background-color: #1e242f;
-  }
+  overflow-x: auto;
+  margin-bottom: 50px;
+}
+
+.api-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Creates separation between thead and tbody */
+  background-color: transparent;
+  color: white;
+  margin-top: 20px;
+}
+
+.api-table thead {
+  background-color: transparent; /* No background for thead */
+}
+
+.api-table thead th {
+  text-align: left;
+  padding: 12px 15px;
+  position: relative; /* Needed for the pseudo-element */
+}
+
+/* Using a pseudo-element to create the header bottom border */
+.api-table thead th::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px; /* Aligns the border with the bottom of the thead */
+  width: 100%;
+  height: 1px; /* Border thickness */
+  background-color: #333; /* Border color */
+}
+
+.api-table tbody tr {
+  background-color: #252c3a;
+  margin: 3px 0; /* Margin for each row */
+  border-radius: 4px; /* Optional: adds rounded corners to each row */
+}
+
+.api-table tbody td {
+  text-align: left;
+  padding: 12px 15px;
+  background-color: #252c3a; /* Background for tbody cells */
+}
+
+/* Additional styling for hover effect and other elements */
+.api-table tbody tr:hover {
+  background-color: #1e242f;
+}
+
   
   .security-critical {
     color: #e74a3b;
