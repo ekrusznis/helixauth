@@ -106,23 +106,36 @@ const APISecurity = () => {
                     {/* Boxes Section */}
                     <div className="overview-container">
                       <div className="card specs">
-                          <Doughnut data={specsData} options={chartOptions}/>
-                          <div className="card-info">
-                              <div className="card-title">Specs</div>
-                              <div className="card-stats">
-                                  <div className="stat">
-                                      <span className="dot with-specs"></span>APIs with specs
-                                  </div>
-                                  <div className="stat">
-                                      <span className="dot without-specs"></span>APIs without specs
-                                  </div>
-                              </div>
-                          </div>
+                        <div className='title-box'>
+                            <p className="card-title">Specs</p>
+                        </div>
+
+                        <div className='chart-box'>
+                            <Doughnut data={specsData} options={chartOptions}/>
+                        </div>
+                          
+                        <div className="card-info">
+                        
+                            <div className="card-stats">
+                                <div className="stat">
+                                    <span className="dot with-specs"></span>APIs with specs
+                                </div>
+                                <div className="stat">
+                                    <span className="dot without-specs"></span>APIs without specs
+                                </div>
+                            </div>
+                        </div>
                       </div>
                       <div className="card endpoints">
-                          <Doughnut data={endpointsData} options={chartOptions}/>
+                        <div className='title-box'>
+                            <div className="card-title">API Endpoints</div>
+                        </div>
+
+                        <div className='chart-box'>
+                            <Doughnut data={endpointsData} options={chartOptions}/>
+                        </div>
+                          
                           <div className="card-info">
-                              <div className="card-title">API Endpoints</div>
                               <div className="card-stats">
                                   <div className="stat">
                                       <span className="dot valid-endpoints"></span>Valid Endpoints
@@ -131,15 +144,21 @@ const APISecurity = () => {
                           </div>
                       </div>
                       <div className="card risks">
-                          <Doughnut data={riskData} options={chartOptions}/>
+                        <div className='title-box'>
+                            <div className="card-title">Risk Findings</div>
+                        </div>
+
+                        <div className='chart-box'>
+                        <Doughnut data={riskData} options={chartOptions}/>
+                        </div>
+                          
                           <div className="card-info">
-                              <div className="card-title">Risk Findings</div>
                               <div className="card-stats">
                                   {/* Generate stats based on the riskData */}
                               </div>
                           </div>
                       </div>
-                  </div>
+                    </div>
                   <ApiTable />
                 
 

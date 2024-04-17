@@ -38,7 +38,7 @@ const ApiTable = () => {
     <div className="api-table-container">
       <table className="api-table">
         <thead>
-          <tr>
+          <tr className='header-tr'>
             <th>Name</th>
             <th>New</th>
             <th>Type</th>
