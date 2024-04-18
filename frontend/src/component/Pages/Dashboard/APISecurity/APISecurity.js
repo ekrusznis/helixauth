@@ -2,7 +2,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Card, Table, Nav } from 'react-bootstrap';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import LoggedInHeader from '../../../Shared/LoggedInHeader'; // Make sure the path is correct
+import LoggedInHeader from '../../../Shared/LoggedInHeader';
 import Footer from '../../../Shared/Footer';
 import mockData from '../../../../mock_db.json';
 import logo from '../../../../assets/helix_logo_white_trans_150.png'

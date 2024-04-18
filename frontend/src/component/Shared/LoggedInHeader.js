@@ -1,6 +1,7 @@
 // LoggedInHeader.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
 import logo from '../../assets/helix_logo_white_trans_150.png';
 import { Form, Navbar, FormControl, Button, Dropdown } from 'react-bootstrap'; // Assuming you're using React Bootstrap
 import { FaQuestionCircle, FaBell } from 'react-icons/fa';
@@ -31,9 +32,11 @@ const LoggedInHeader = () => {
 
       {/* Right content */}
       <div className="right-content">
+
         <Button className="mr-2 help">
-          <FaQuestionCircle /> Help Center
+            <Nav.Link href="/help"> <FaQuestionCircle /> Help Center</Nav.Link>
         </Button>
+
         <Button className="mr-2 bell">
           <FaBell />
         </Button>
