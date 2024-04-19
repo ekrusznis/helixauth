@@ -11,6 +11,7 @@ services:
       SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-dev}
     depends_on:
       - db
+      - redis
   frontend:
     image: ${FRONTEND_IMAGE:-geass/helixauth-frontend:latest}
     ports:
@@ -27,4 +28,8 @@ services:
     volumes:
       - /mnt/db_volume_nyc1_01:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - "5432:5432"
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
