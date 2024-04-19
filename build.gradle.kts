@@ -35,6 +35,7 @@ dependencies {
     implementation("io.springfox:springfox-swagger2:3.0.0")
     implementation("io.springfox:springfox-swagger-ui:3.0.0")
     implementation("com.google.code.gson:gson:2.8.6")
+    implementation("org.bouncycastle:bcprov-jdk15on:1.68")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
