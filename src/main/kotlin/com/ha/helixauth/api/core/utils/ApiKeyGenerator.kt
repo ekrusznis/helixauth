@@ -2,10 +2,12 @@ package com.ha.helixauth.api.core.utils
 
 import org.bouncycastle.asn1.pkcs.RSAPrivateKey
 import org.bouncycastle.asn1.pkcs.RSAPublicKey
+import org.springframework.stereotype.Component
 import java.security.KeyPairGenerator
 import java.security.SecureRandom
 import java.util.*
 
+@Component
 object ApiKeyGenerator {
     fun generateKeyPair(): Pair<String, String> {
         val keyPairGen = KeyPairGenerator.getInstance("RSA")
