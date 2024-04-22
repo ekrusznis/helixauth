@@ -1,6 +1,5 @@
 package com.ha.helixauth.api.role.controller
 
-import com.ha.helixauth.api.annotation.HelixAuthorize
 import com.ha.helixauth.api.role.model.Role
 import com.ha.helixauth.api.role.service.RoleService
 import org.springframework.http.ResponseEntity
@@ -16,18 +15,16 @@ import org.springframework.web.bind.annotation.RestController
 class RoleController(val roleService: RoleService) {
 
     @PostMapping("/createRole")
-    @HelixAuthorize(["ADMIN", "EDITOR"])
-    fun createRole(@RequestParam name: String, @RequestParam companyId: Long,
-                   @RequestParam smartContract: String): ResponseEntity<Role> {
-        val role = roleService.createRole(name, companyId, smartContract)
+    fun createRole(@RequestParam name: String,
+                   @RequestParam companyId: Long): ResponseEntity<Role> {
+        val role = roleService.createRole(name, companyId)
         return ResponseEntity.ok(role)
     }
 
     @PutMapping("/updateRole/{roleId}")
     fun updateRole(@PathVariable roleId: Long,
-                   @RequestParam newName: String,
-                   @RequestParam newSmartContract: String): ResponseEntity<Role> {
-        val updatedRole = roleService.updateRole(roleId, newName, newSmartContract)
+                   @RequestParam newName: String): ResponseEntity<Role> {
+        val updatedRole = roleService.updateRole(roleId, newName)
         return ResponseEntity.ok(updatedRole)
     }
 

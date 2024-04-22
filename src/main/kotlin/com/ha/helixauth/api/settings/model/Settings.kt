@@ -1,4 +1,4 @@
-package com.ha.helixauth.api.core.model
+package com.ha.helixauth.api.settings.model
 
 import com.ha.helixauth.api.company.model.Company
 import javax.persistence.Column
@@ -11,22 +11,16 @@ import javax.persistence.OneToOne
 import javax.persistence.Table
 
 @Entity
-@Table(name = "api_key")
-class ApiKey(
+@Table(name = "company_settings")
+class Settings(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long = 0,
 
-    @Column(nullable = false, unique = true)
-    val key: String,
-
-    @Column(nullable = false, unique = true)
-    val public_key: String,
-
-    @Column(nullable = false, unique = true)
-    val secret_key: String,
+    @Column(columnDefinition = "jsonb", nullable = false)
+    val settings: String,
 
     @OneToOne
-    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    @JoinColumn(name = "company_id", referencedColumnName = "id", unique = true)
     val company: Company
 )

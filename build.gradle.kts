@@ -28,6 +28,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-mail")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+//    implementation("org.springframework.boot:spring-boot-starter-data-redis")
+//    implementation("org.springframework.data:spring-data-redis")
+//    implementation("org.springframework.boot:spring-boot-starter-integration")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.vladmihalcea:hibernate-types-52:2.21.1")
@@ -35,6 +38,7 @@ dependencies {
     implementation("io.springfox:springfox-swagger2:3.0.0")
     implementation("io.springfox:springfox-swagger-ui:3.0.0")
     implementation("com.google.code.gson:gson:2.8.6")
+    implementation("org.bouncycastle:bcprov-jdk15on:1.68")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 

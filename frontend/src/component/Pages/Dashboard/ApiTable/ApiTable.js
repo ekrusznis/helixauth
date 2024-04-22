@@ -5,31 +5,31 @@ const ApiTable = () => {
   // Static data for the table
   const apiData = [
     {
-      name: 'user.bestbags',
-      isNew: true,
+      name: '/api/v2/user',
+      operation: 'GET',
       type: 'Internal',
       traceSource: 'Kong',
-      securityFindings: { critical: 16, high: 3, medium: 163, low: 1 },
-      labels: 'No Authentication',
-      endpoints: 2,
+      securityFindings: { critical: 'ADMIN', high: 'DEV', medium: 'EDITOR'},
+      labels: 'Authentication',
+      endpoints: 20,
     },
     {
-        name: 'user.bestbags',
-        isNew: true,
-        type: 'Internal',
-        traceSource: 'Kong',
-        securityFindings: { critical: 16, high: 3, medium: 163, low: 1 },
+        name: '/api/v1/user',
+        operation: 'POST',
+        type: 'External',
+        traceSource: 'GZ',
+        securityFindings: { critical: 'ADMIN', high: 'DEV'},
         labels: 'No Authentication',
-        endpoints: 2,
+        endpoints: 32,
       },
       {
-        name: 'user.bestbags',
-        isNew: true,
+        name: 'api/v2/settings/{id}',
+        operation: 'PATCH',
         type: 'Internal',
-        traceSource: 'Kong',
-        securityFindings: { critical: 16, high: 3, medium: 163, low: 1 },
-        labels: 'No Authentication',
-        endpoints: 2,
+        traceSource: 'Kong V2',
+        securityFindings: { critical: 'ADMIN' },
+        labels: 'Authentication',
+        endpoints: 21,
       },
     // Add other data entries...
   ];
@@ -39,26 +39,26 @@ const ApiTable = () => {
       <table className="api-table">
         <thead>
           <tr className='header-tr'>
-            <th>Name</th>
-            <th>New</th>
+            <th>Path</th>
+            <th>Operation</th>
             <th>Type</th>
-            <th>Trace Source</th>
-            <th>Security Findings</th>
+            <th>Service</th>
+            <th>Roles</th>
             <th>Labels</th>
-            <th>No. Endpoints</th>
+            <th>Hits</th>
           </tr>
         </thead>
         <tbody>
           {apiData.map((item, index) => (
             <tr key={index}>
               <td>{item.name}</td>
-              <td>{item.isNew ? 'New' : ''}</td>
+              <td>{item.operation}</td>
               <td>{item.type}</td>
               <td>{item.traceSource}</td>
               <td>
-                <span className="security-critical">{item.securityFindings.critical}</span> /
-                <span className="security-high">{item.securityFindings.high}</span> /
-                <span className="security-medium">{item.securityFindings.medium}</span> /
+                <span className="security-critical">{item.securityFindings.critical}</span> |
+                <span className="security-high">{item.securityFindings.high}</span> |
+                <span className="security-medium">{item.securityFindings.medium}</span> |
                 <span className="security-low">{item.securityFindings.low}</span>
               </td>
               <td>{item.labels}</td>

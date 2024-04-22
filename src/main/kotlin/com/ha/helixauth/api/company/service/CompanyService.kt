@@ -3,6 +3,7 @@ package com.ha.helixauth.api.company.service
 import com.ha.helixauth.api.company.model.Company
 import com.ha.helixauth.api.company.model.dto.CancellationRequestDto
 import com.ha.helixauth.api.company.model.dto.RegistrationDto
+import com.ha.helixauth.api.company.model.dto.RegistrationResponseDto
 import com.ha.helixauth.api.company.model.mapper.CancellationRequestMapper
 import com.ha.helixauth.api.company.model.mapper.CompanyMapper
 import com.ha.helixauth.api.company.repository.AccountCancellationRepository
@@ -58,8 +59,7 @@ class CompanyService(
         return companyRepository.findById(companyId).orElseThrow { RuntimeException("Company not found") }
     }
 
-    fun newRegistration(registrationDto: RegistrationDto): ResponseEntity<Any> {
-        // Register the user
+    fun newRegistration(registrationDto: RegistrationDto): ResponseEntity<RegistrationResponseDto> {
         val company = this.registerCompany(CompanyMapper.toEntity(registrationDto.company))
 
         company.blockchain.addTransactionToBlockchain(
@@ -85,9 +85,8 @@ class CompanyService(
 //            paymentInfo.transactionId,
 //            registrationDto.subscription.transactionId
 //        )
-
-        // Assuming you want to return combined info or just a status message
-        return ResponseEntity.ok("Registration successful")
+        val newRegister = RegistrationResponseDto(userId = user.id, companyId = company.id)
+        return ResponseEntity.ok(newRegister)
 
     }
 }

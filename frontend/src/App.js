@@ -22,6 +22,9 @@ import Help from './component/Pages/Help/Help';
 import SignUp from './component/Pages/SignUp/SignUp';
 import Settings from './component/Pages/Settings/Settings';
 import Error404 from './component/Pages/Error404/Error404';
+import Referrals from './component/Pages/Referrals/Referrals';
+import Specs from './component/Pages/Specs/Specs';
+import Roles from './component/Pages/Roles/Roles';
 import ScrollUpBtn from './component/Shared/ScrollUpBtn';
 import APISecurity from './component/Pages/Dashboard/APISecurity/APISecurity';
 
@@ -48,6 +51,9 @@ function App() {
         <Route path='/apisecurity' element={<APISecurity />}></Route>
         <Route path='/help' element={<Help />}></Route>
         <Route path='/settings' element={<Settings />}></Route>
+        <Route path='/referrals' element={<Referrals />}></Route>
+        <Route path='/specs' element={<Specs />}></Route>
+        <Route path='/roles' element={<Roles />}></Route>
         <Route path='*' element={<Error404 />}></Route>
       </Routes>
       <ScrollUpBtn />

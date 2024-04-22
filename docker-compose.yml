@@ -11,6 +11,7 @@ services:
       SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-dev}
     depends_on:
       - db
+#      - redis
   frontend:
     image: ${FRONTEND_IMAGE:-geass/helixauth-frontend:latest}
     ports:
@@ -27,4 +28,15 @@ services:
     volumes:
       - /mnt/db_volume_nyc1_01:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - "5432:5432"
+#  redis:
+#    image: redis:latest
+#    # Remove the ports line to prevent Redis from being accessible from outside the Docker network
+#    command: redis-server --requirepass Helix!123!Auth
+#    networks:
+#      - internal
+#
+## Define the internal network
+#networks:
+#  internal:
+#    driver: bridge
