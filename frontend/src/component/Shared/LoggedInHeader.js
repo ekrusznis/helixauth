@@ -6,6 +6,7 @@ import logo from '../../assets/helix_logo_white_trans_150.png';
 import { Form, Navbar, FormControl, Button, Dropdown } from 'react-bootstrap'; // Assuming you're using React Bootstrap
 import { FaQuestionCircle, FaBell } from 'react-icons/fa';
 import "./LoggedInHeader.css"
+import { useNavigate, NavLink } from 'react-router-dom';
 
 const LoggedInHeader = () => {
   // Dummy function for dropdown selection
@@ -34,7 +35,8 @@ const LoggedInHeader = () => {
       <div className="right-content">
 
         <Button className="mr-2 help">
-            <Nav.Link href="/help"> <FaQuestionCircle /> Help Center</Nav.Link>
+          <FaQuestionCircle /> 
+          <NavLink className='help-text' to='/help'>Help Center</NavLink>
         </Button>
 
         <Button className="mr-2 bell">

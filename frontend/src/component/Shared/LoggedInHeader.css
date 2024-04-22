@@ -44,9 +44,14 @@
   .bell, .help {
     background: none;
     border: none;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .help {
     margin-right: -5px;
+  }
+
+  .help-text {
+    color: white;
+    margin-left: 5px;
   }
