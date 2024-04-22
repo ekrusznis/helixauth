@@ -11,6 +11,10 @@ export const login = (email, password) => {
   return apiClient.post('/user/login', { email, password });
 };
 
+export const validateToken = (token) => {
+  return apiClient.post('/validateToken', { token });
+};
+
 export const dashboardData = (userId) => {
   return apiClient.get('/dashboard', { userId });
 };
