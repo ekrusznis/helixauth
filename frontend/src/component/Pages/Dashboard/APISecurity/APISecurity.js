@@ -14,7 +14,7 @@ import { Doughnut } from 'react-chartjs-2';
 import "./APISecurity.css"
 import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 import ApiTable from '../ApiTable/ApiTable';
-import { validateToken } from '../../../ApiClient';
+//import { validateToken } from '../../../ApiClient';
 
 const APISecurity = () => {
 
