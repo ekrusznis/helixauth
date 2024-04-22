@@ -1,0 +1,129 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .App {
+    text-align: center;
+    background-color: #131921;
+    color: white;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif; /* Use Google Fonts as needed */
+  }
+  
+  #sidebar {
+    background-color: #232f3e;
+    padding: 20px;
+    margin: 20px;
+    height: 600px;
+    border-radius: 10px;
+  }
+
+  .menu-content {
+    background-color: #232f3e;
+
+  }
+
+  .menu-item {
+    margin: 10px 0px;
+    border: none;
+    background: none;
+  }
+
+  .accordion-header button{
+    background-color: #131921;
+    color: white;
+  }
+  
+  #page-content {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .title-block {
+    background-color: #232f3e;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 60px;
+    margin-bottom: 30px
+  }
+
+  .title-block h2{
+    margin-bottom: 0px;
+    color: white;
+  }
+
+  .title-block h3{
+    margin-bottom: 0px;
+    color: #354f72;
+    font-weight: 600;
+  }
+
+  .content-block{
+    background-color: #232f3e;
+    padding: 15px;
+    text-align: left;
+    border-radius: 20px;
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .card-row{
+    margin: auto;
+  }
+
+  .card{
+    width: 100%;
+  }
+
+  .card-button {
+    position: absolute;
+    bottom: 1rem; /* Adjust as needed for your layout */
+    right: 1rem; /* Adjust as needed for your layout */
+    border: none;
+    width: 50px;
+    height: 50px;
+    background-color: #fff; /* Button background color */
+    border-radius: 10px; /* Makes the button round */
+    padding: 0.5rem; /* Adjust padding to scale the button size */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: adds shadow for depth */
+  }
+
+  .card-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the card */
+    border-radius: 10px;
+  }
+
+  .card-layout .card-body {
+    padding-bottom: 56.25%; /* This is for 16:9 aspect ratio */
+    position: relative;
+  }
+
+  .card-body-hidden {
+    display: none;
+  }
+
+  .page{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .footer {
+    background-color: #131921;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+  }

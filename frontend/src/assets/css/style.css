@@ -46,12 +46,12 @@ TABLE OF CONTENTS:
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Varela&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 html,
 body {
   font-size: 16px;
   color: #424242;
-  font-family: "Varela", sans-serif;
+  font-family: "Poppins", sans-serif;
   vertical-align: baseline;
   font-weight: 400;
   overflow-x: hidden;
