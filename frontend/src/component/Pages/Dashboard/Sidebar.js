@@ -22,18 +22,23 @@ const Sidebar = ({ collapsed, toggleSidebar }) => {
       {/* Dashboard Link */}
       <Nav className="flex-column" >
         {/* Section 2 */}
-        <div className="section-title" style={{ display: 'flex', justifyContent: 'center' }}>HELIX AUTH</div>
-        <Nav.Link href="/roles" style={{ display: 'flex', justifyContent: 'center' }}>Security Roles</Nav.Link>
-        <Nav.Link href="/specs" style={{ display: 'flex', justifyContent: 'center' }}>Specs</Nav.Link>
-        <Nav.Link href="#compliance" style={{ display: 'flex', justifyContent: 'center' }}>Compliance</Nav.Link>
+        <div className="section-title">Posture Management</div>
+        <Nav.Link href="#cloud_inventory">Cloud Inventory</Nav.Link>
+        <Nav.Link href="#security_posture">Security Posture</Nav.Link>
+        <Nav.Link href="#root_cause_analysis">Root Cause Analysis</Nav.Link>
+        <Nav.Link href="#compliance_frameworks">Compliance Frameworks</Nav.Link>
+        {/* Section 3 */}
+        <div className="section-title">Workloads and Data</div>
+        <NavLink className='nav-link'to="/apisecurity">API Dashboard</NavLink>
+        <NavLink className='nav-link'to="/specs">Specs</NavLink>
+        <NavLink className='nav-link'to="/roles">Roles</NavLink>
         {/* Section 4 */}
         <div className="section-title" style={{ display: 'flex', justifyContent: 'center' }}>Build & Applications</div>
         <Nav.Link href="#cicd" style={{ display: 'flex', justifyContent: 'center' }}>CI/CD</Nav.Link>
         {/* Section 5 */}
-        <div className="section-title" style={{ display: 'flex', justifyContent: 'center' }}>Management</div>
-        <Nav.Link href="#integrations" style={{ display: 'flex', justifyContent: 'center' }}>Integrations</Nav.Link>
-        <Nav.Link href="/settings" style={{ display: 'flex', justifyContent: 'center' }}>Settings</Nav.Link>
-        <Nav.Link href="/referrals" style={{ display: 'flex', justifyContent: 'center' }}>Referrals</Nav.Link>
+        <div className="section-title">Management</div>
+        <Nav.Link href="#integrations">Integrations</Nav.Link>
+        <NavLink className='nav-link'to="/settings">Settings</NavLink>
       </Nav>
     </div>
   );
