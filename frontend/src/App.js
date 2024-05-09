@@ -23,8 +23,6 @@ import SignUp from './component/Pages/SignUp/SignUp';
 import Settings from './component/Pages/Settings/Settings';
 import Error404 from './component/Pages/Error404/Error404';
 import Referrals from './component/Pages/Referrals/Referrals';
-import Specs from './component/Pages/Specs/Specs';
-import Roles from './component/Pages/Roles/Roles';
 import ScrollUpBtn from './component/Shared/ScrollUpBtn';
 import APISecurity from './component/Pages/Dashboard/APISecurity/APISecurity';
 import Roles from './component/Pages/Dashboard/Roles/Roles';
