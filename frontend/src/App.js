@@ -24,6 +24,8 @@ import Settings from './component/Pages/Settings/Settings';
 import Error404 from './component/Pages/Error404/Error404';
 import ScrollUpBtn from './component/Shared/ScrollUpBtn';
 import APISecurity from './component/Pages/Dashboard/APISecurity/APISecurity';
+import Roles from './component/Pages/Dashboard/Roles/Roles';
+import Specs from './component/Pages/Dashboard/Specs/Specs';
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/dashboard' element={<APISecurity />}></Route>
         <Route path='/apisecurity' element={<APISecurity />}></Route>
+        <Route path='/specs' element={<Specs />}></Route>
+        <Route path='/roles' element={<Roles />}></Route>
         <Route path='/help' element={<Help />}></Route>
         <Route path='/settings' element={<Settings />}></Route>
         <Route path='*' element={<Error404 />}></Route>

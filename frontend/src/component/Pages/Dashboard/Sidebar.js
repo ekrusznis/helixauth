@@ -35,13 +35,15 @@ const Sidebar = ({ collapsed, toggleSidebar }) => {
         {/* Section 3 */}
         <div className="section-title">Workloads and Data</div>
         <NavLink className='nav-link'to="/apisecurity">API Dashboard</NavLink>
+        <NavLink className='nav-link'to="/specs">Specs</NavLink>
+        <NavLink className='nav-link'to="/roles">Roles</NavLink>
         {/* Section 4 */}
         <div className="section-title">Build & Applications</div>
         <Nav.Link href="#ci_cd">CI/CD</Nav.Link>
         {/* Section 5 */}
         <div className="section-title">Management</div>
         <Nav.Link href="#integrations">Integrations</Nav.Link>
-        <Nav.Link href="#management">Settings</Nav.Link>
+        <NavLink className='nav-link'to="/settings">Settings</NavLink>
       </Nav>
     </div>
   );

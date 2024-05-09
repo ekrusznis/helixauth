@@ -1,0 +1,116 @@
+/* APISecurity.css */
+.api-security-page {
+    background-color: #151d28; /* Darkest blue background color */
+    color: #fff; /* Text color */
+    padding: 10px; /* Add padding to content */
+  }
+  
+.navigation-bar {
+display: flex;
+border-bottom: 1px solid #ccc;
+margin-bottom: 20px;
+}
+
+.navigation-bar ul {
+display: flex;
+list-style: none;
+padding: 0;
+}
+
+.navigation-bar li {
+margin-right: 20px;
+cursor: pointer;
+color: rgb(0, 174, 255)
+}
+
+.navigation-bar li:hover {
+  margin-right: 20px;
+  cursor: pointer;
+  border-bottom: rgb(0, 174, 255);
+  }
+
+.boxes-section {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.box {
+flex: 1;
+background-color: #f0f0f0;
+height: 100px;
+margin-right: 10px;
+}
+
+.title {
+  font-size: 23px;
+  font-weight: 400;
+  color: white;
+}
+.overview-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  height: 400px;
+}
+
+.card {
+  background-color: #233043;
+  border-radius: 10px;
+  width: 33%; /* Adjust as needed */
+  height: 100%;
+  margin: 7px;
+  position: relative;
+  color: #fff;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.title-box {
+  background-color: #273549;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+.card-title {
+  font-size: 13px;
+  margin-left: 15px;
+  margin-top: 9px;
+  font-weight: bold;
+}
+
+.card-stats .stat {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.with-specs {
+  background-color: #4e73df;
+}
+
+.without-specs {
+  background-color: #1cc88a;
+}
+
+.valid-endpoints {
+  background-color: #f6c23e;
+}
+
+/* Add styles for the risk colors */
+
+
