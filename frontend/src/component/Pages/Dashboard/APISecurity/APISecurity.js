@@ -2,7 +2,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Card, Table, Nav } from 'react-bootstrap';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import LoggedInHeader from '../../../Shared/LoggedInHeader'; // Make sure the path is correct
+import LoggedInHeader from '../../../Shared/LoggedInHeader';
 import Footer from '../../../Shared/Footer';
 import mockData from '../../../../mock_db.json';
 import logo from '../../../../assets/helix_logo_white_trans_150.png'
@@ -14,6 +14,7 @@ import { Doughnut } from 'react-chartjs-2';
 import "./APISecurity.css"
 import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 import ApiTable from '../ApiTable/ApiTable';
+//import { validateToken } from '../../../ApiClient';
 
 const APISecurity = () => {
 
@@ -63,10 +64,25 @@ const APISecurity = () => {
     // Mock data extraction (replace this with actual API call data when available)
     const { reportData, dashboardCards } = mockData;
     const navigate = useNavigate();
+//    const token = localStorage.getItem('sessionToken');
 
     const chartRef = useRef(null);
 
-
+//  useEffect(() => {
+//    const validateSessionToken = async () => {
+//      try {
+//        const validationResponse = await validateToken(token);
+//        // Proceed if token is valid
+//        console.log('Token is valid:', validationResponse);
+//      } catch (error) {
+//        // Redirect to login or handle token validation failure
+//        console.error(error.message);
+//        // navigate('/login'); Uncomment this if you have 'navigate' from react-router
+//      }
+//    };
+//
+//    validateSessionToken();
+//  }, [token]);
 
     return (
         <>

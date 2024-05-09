@@ -4,6 +4,7 @@ import { Nav } from 'react-bootstrap';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useNavigate, NavLink } from 'react-router-dom';
 import './Sidebar.css'; // Import CSS file for styling
+import logo from '../../../assets/helix_logo_white_trans.png'
 
 const Sidebar = ({ collapsed, toggleSidebar }) => {
   const navigate = useNavigate();
@@ -15,17 +16,11 @@ const Sidebar = ({ collapsed, toggleSidebar }) => {
         <FaTimes size={20} />
       </div>
       {/* Logo */}
-      <div className="logo">
-        <img src="/path/to/logo.png" alt="Logo" />
+          <div className="logo" style={{ display: 'flex', justifyContent: 'center' }}>
+          <img src={logo} alt="Logo" style={{ width: '60%', height: 'auto' }}/>
       </div>
       {/* Dashboard Link */}
-      <Nav className="flex-column">
-        <Nav.Link href="#dashboard">Dashboard</Nav.Link>
-        {/* Section 1 */}
-        <div className="section-title">Threats and Vulnerabilities</div>
-        <Nav.Link href="#attack_path_analysis">Attack Path Analysis</Nav.Link>
-        <Nav.Link href="#external_path_surface">External Path Surface</Nav.Link>
-        <Nav.Link href="#vulnerabilities_management">Vulnerabilities Management</Nav.Link>
+      <Nav className="flex-column" >
         {/* Section 2 */}
         <div className="section-title">Posture Management</div>
         <Nav.Link href="#cloud_inventory">Cloud Inventory</Nav.Link>
@@ -38,8 +33,8 @@ const Sidebar = ({ collapsed, toggleSidebar }) => {
         <NavLink className='nav-link'to="/specs">Specs</NavLink>
         <NavLink className='nav-link'to="/roles">Roles</NavLink>
         {/* Section 4 */}
-        <div className="section-title">Build & Applications</div>
-        <Nav.Link href="#ci_cd">CI/CD</Nav.Link>
+        <div className="section-title" style={{ display: 'flex', justifyContent: 'center' }}>Build & Applications</div>
+        <Nav.Link href="#cicd" style={{ display: 'flex', justifyContent: 'center' }}>CI/CD</Nav.Link>
         {/* Section 5 */}
         <div className="section-title">Management</div>
         <Nav.Link href="#integrations">Integrations</Nav.Link>

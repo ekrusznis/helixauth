@@ -1,4 +1,4 @@
-package com.ha.helixauth.api.utils
+package com.ha.helixauth.api.utils.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
